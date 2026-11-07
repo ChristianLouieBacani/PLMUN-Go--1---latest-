@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | PLMUN GO</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- FontAwesome Icons for modern visuals -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="student">
+  <div class="container">
+    <div class="wrapper">
+
+      <!-- Navigation Header -->
+      <nav class="top-nav">
+        <div class="logo">
+          <img src="images/plmunlogo.png" alt="PLMun Logo" class="logo-icon">
+          <h1>PLMUN Go</h1>
+        </div>
+
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html" class="active">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="student.html">Student</a>
+          <a href="organization.html">Organization</a>
+        </div>
+      </nav>
+
+      <main class="about-page">
+        <!-- 1. Hero / Overview Section -->
+        <section class="about-hero">
+          <div class="hero-text">
+            <span class="badge">ABOUT PLMUN</span>
+            <h2>Pamantasan ng Lungsod ng Muntinlupa</h2>
+            <p>
+              Pamantasan ng Lungsod ng Muntinlupa (PLMun) is a premier public university committed to
+              providing quality, affordable, and accessible education to the youth of Muntinlupa City.
+              Since its establishment, PLMun has nurtured graduates who embody excellence,
+              integrity, and service to the community.
+            </p>
+          </div>
+          <div class="hero-image">
+            <img src="images/plmunlogo.png" alt="PLMun Campus Graphic">
+          </div>
+        </section>
+
+        <!-- 2. Interactive / Timeline History Section -->
+        <section class="history-section">
+          <div class="section-header">
+            <h2>Our Journey</h2>
+            <p>Tracing our roots from local college to respected university</p>
+          </div>
+          
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-icon"><i class="fa-solid fa-building-columns"></i></div>
+              <div class="timeline-content">
+                <span class="year">1991</span>
+                <h3>Foundation</h3>
+                <p>Founded by the local government of Muntinlupa to offer higher education opportunities for deserving students.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-icon"><i class="fa-solid fa-chart-line"></i></div>
+              <div class="timeline-content">
+                <span class="year">Expansion</span>
+                <h3>Growth & Development</h3>
+                <p>Evolved from a local college into a fully recognized university offering diverse degree programs.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+              <div class="timeline-content">
+                <span class="year">Present</span>
+                <h3>Academic Excellence</h3>
+                <p>Nurturing thousands of students across multiple colleges and specialized fields of study.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Mission & Vision Grid -->
+        <section class="mv-section">
+          <div class="mv-card vision-card">
+            <div class="mv-icon"><i class="fa-solid fa-eye"></i></div>
+            <h3>Vision</h3>
+            <p>
+              A dynamic and highly competitive Higher Education Institution (HEI)
+              committed to people empowerment towards building a humane society.
+            </p>
+          </div>
+
+          <div class="mv-card mission-card">
+            <div class="mv-icon"><i class="fa-solid fa-bullseye"></i></div>
+            <h3>Mission</h3>
+            <p>
+              To provide quality, affordable and relevant education responsive to the changing
+              needs of the local and global communities through effective and efficient integration
+              of instruction, research and extension; to develop productive and God-loving individuals in society.
+            </p>
+          </div>
+        </section>
+
+        <!-- 4. Core Values Grid -->
+        <section class="values-section">
+          <div class="section-header">
+            <h2>Core Values</h2>
+            <p>The pillars that guide our institution and community</p>
+          </div>
+
+          <div class="values-grid">
+            <div class="value-card">
+              <div class="val-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <h4>Integrity</h4>
+            </div>
+            <div class="value-card">
+              <div class="val-icon"><i class="fa-solid fa-award"></i></div>
+              <h4>Excellence</h4>
+            </div>
+            <div class="value-card">
+              <div class="val-icon"><i class="fa-solid fa-user-check"></i></div>
+              <h4>Discipline</h4>
+            </div>
+            <div class="value-card">
+              <div class="val-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+              <h4>Social Responsibility</h4>
+            </div>
+            <div class="value-card">
+              <div class="val-icon"><i class="fa-solid fa-lightbulb"></i></div>
+              <h4>Innovation</h4>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer>
+        <p>© 2025 Pamantasan ng Lungsod ng Muntinlupa | All Rights Reserved</p>
+        <p>Contact us at <a href="mailto:info@plmun.edu.ph">info@plmun.edu.ph</a></p>
+      </footer>
+
+    </div> <!-- end .wrapper -->
+  </div> <!-- end .container -->
+  
+
+  <script src="script.js"></script>
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

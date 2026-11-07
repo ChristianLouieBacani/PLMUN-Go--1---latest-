@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - My Website</title>
+  <link rel="stylesheet" href="style.css"> 
+</head>
+
+<body class="contact">
+  <div class="container">
+    <div class="wrapper">
+
+      <!-- Top Navigation (same as other pages) -->
+      <nav class="top-nav">
+        <div class="logo">
+          <img src="images/plmunlogo.png" alt="logo" class="logo-icon">
+          <h1>PLMUN Go</h1>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html" class="active">Contact</a>
+          <a href="student.html">Student</a>
+          <a href="organization.html">Organization</a>
+        </div>
+      </nav>
+
+            <!-- Main Content -->
+      <div class="content">
+        <h1>Contact Us</h1>
+        <p>Got a question? Send a message below!</p>
+
+        <form action="https://formspree.io/f/mwpygpbd" method="POST">
+          <label>Name:</label>
+          <input type="text" name="name" placeholder="Your name" required>
+
+          <label>Email:</label>
+          <input type="email" name="email" placeholder="Your email" required>
+
+          <label>Message:</label>
+          <textarea rows="4" name="message" placeholder="Type your message..." required></textarea>
+
+          <button type="submit">Send</button>
+        </form>
+
+        <p id="form-status" style="margin-top:15px; color:green; display:none;">
+          Message sent successfully! 🎉
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Pamantasan ng Lungsod ng Muntinlupa | All Rights Reserved</p>
+    <p>Contact us at <a href="mailto:info@plmun.edu.ph">info@plmun.edu.ph</a></p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

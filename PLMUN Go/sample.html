@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLMun Campus AI Assistant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        input[type="text"] {
+            width: calc(100% - 100px); /* Adjust width for button */
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #ai-response {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            min-height: 50px; /* Give it some space */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ask Dola, your PLMun Campus Assistant</h1>
+        <p>Type your question below (e.g., "Where is the library?"):</p>
+        <input type="text" id="user-input" placeholder="Type your question here...">
+        <button id="send-button">Send</button>
+        <div id="ai-response">
+            Hello! How can I help you navigate PLMun today?
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- This line links to our JavaScript file -->
+</body>
+</html>

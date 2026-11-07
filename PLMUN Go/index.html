@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PLMUN GO</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="home">
+  <div class="container">
+    <div class="wrapper">
+
+      <!-- Top Navigation -->
+      <nav class="top-nav">
+        <div class="logo">
+          <img src="images/plmunlogo.png" alt="logo" class="logo-icon">
+          <h1>PLMUN Go</h1>
+        </div>
+
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="nav-links">
+          <a href="index.html" class="active">Home</a> 
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="student.html">Student</a>
+          <a href="organization.html">Organization</a>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-text">
+          <h1>Explore PLMUN</h1>
+          <p>Learn, Connect, and Grow at Pamantasan ng Lungsod ng Muntinlupa</p>
+        </div>
+      </section>
+
+      <!-- Lower Navigation Bar -->
+      <nav class="lower-nav">
+        <a href="admissions.html">Admissions</a>
+        <a href="programs.html">Programs</a>
+        <a href="news.html">News</a>
+        <a href="campuslife.html">Campus Life</a>
+      </nav>
+
+      <!-- 1. STATS METRICS RIBBON (ADDITION TO BREAK THE BLAND LOOK) -->
+      <section class="stats-ribbon">
+        <div class="stat-box">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span class="stat-num">30+</span>
+          <span class="stat-label">Academic Programs</span>
+        </div>
+        <div class="stat-box">
+          <i class="fa-solid fa-building-columns"></i>
+          <span class="stat-num">4</span>
+          <span class="stat-label">Main Buildings</span>
+        </div>
+        <div class="stat-box">
+          <i class="fa-solid fa-users"></i>
+          <span class="stat-num">10,000+</span>
+          <span class="stat-label">Active Students</span>
+        </div>
+        <div class="stat-box">
+          <i class="fa-solid fa-award"></i>
+          <span class="stat-num">100%</span>
+          <span class="stat-label">ALCU Accredited</span>
+        </div>
+      </section>
+
+      <!-- 2. AI ASSISTANT SECTION -->
+      <section class="ai-section-wrapper">
+        <div class="ai-card-wrapper">
+          <div class="ai-title-block">
+            <span class="badge-pill"><i class="fa-solid fa-sparkles"></i> AI CAMPUS ASSISTANT</span>
+            <h2>Ask PLMun Go</h2>
+            <p>Type your question below (e.g., "Where is the clinic?"):</p>
+          </div>
+
+          <!-- Input Bar -->
+          <div class="ai-search-bar">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="user-input" placeholder="Where is the clinic?" autocomplete="off">
+            <button type="button" id="clear-btn" class="clear-icon" title="Clear text"><i class="fa-solid fa-xmark"></i></button>
+            <button type="button" id="send-button" class="send-btn">Send</button>
+          </div>
+
+          <!-- 50/50 Split Box -->
+          <div class="ai-result-box">
+            <div class="ai-text-side">
+              <p id="ai-response">Hello! How can I help you navigate PLMun today?</p>
+            </div>
+            
+            <div class="ai-image-side" id="ai-image-container">
+              <div id="ai-image" class="image-wrapper"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. CAMPUS MAP SECTION -->
+      <section class="campus-map-section">
+        <div class="section-title-center">
+          <span class="section-badge"><i class="fa-solid fa-map-location-dot"></i> INTERACTIVE MAP</span>
+          <h2>University Campus Layout</h2>
+          <div class="title-line"></div>
+          <p>Hover over pins to preview building details and academic offices.</p>
+        </div>
+
+        <div class="map-wrapper-card">
+          <div class="map-wrapper">
+            <img src="images/finalmap.png" alt="Campus Map" class="campus-map-img">
+
+            <!-- PINS -->
+            <div class="map-pin" data-title="Bonifacio Building" data-image="images/admin.png" data-desc="Academic Building 2" style="top: 28%; left: 48%;"></div>
+            <div class="map-pin" data-title="Del Pilar Building" data-image="images/Building2.png" data-desc="Academic Building 3" style="top: 14%; left: 70%;"></div>
+            <div class="map-pin" data-title="University Gymnasium" data-image="images/gym.jpg" style="top: 55%; left: 40%;"></div>
+            <div class="map-pin" data-title="Rizal Building" data-image="images/Research Building.png" data-desc="Academic Building 4" style="top: 21%; left: 87%;"></div>
+            <div class="map-pin" data-title="Mabini Building" data-image="images/Building3.png" data-desc="Academic Building 1" style="top: 46%; left: 19%;"></div>
+                 
+            <!-- POPUP -->
+            <div class="map-popup" id="mapPopup">
+              <img id="popupImg" src="">
+              <h3 id="popupTitle"></h3>
+              <p id="popupDesc"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Maps Embed Card -->
+        <div class="google-map-card">
+          <div class="gmap-header">
+            <h4><i class="fa-solid fa-location-dot"></i> Google Maps Location</h4>
+            <span>NBP Reservation, Poblacion, Muntinlupa</span>
+          </div>
+          <iframe
+            src="https://www.google.com/maps?q=Pamantasan+ng+Lungsod+ng+Muntinlupa&output=embed"
+            width="100%"
+            height="320"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </section>
+
+      <!-- 4. OFFICE DIRECTORY -->
+      <section class="office-directory-section">
+        <div class="section-title-center">
+          <span class="section-badge"><i class="fa-solid fa-sitemap"></i> DIRECTORY</span>
+          <h2 class="directory-title">University Office Directory</h2>
+          <div class="title-line"></div>
+        </div>
+
+        <div class="office-directory-grid">
+
+          <!-- Mabini Building -->
+          <div class="building-card">
+            <button class="building-header">
+              Mabini Building (Building 1)
+              <span class="building-icon">+</span>
+            </button>
+            <div class="building-content">
+              <details>
+                <summary>First Floor</summary>
+                <ul>
+                  <li>Office of the University Registrar</li>
+                  <li>Treasury Office</li>
+                </ul>
+              </details>
+              <details>
+                <summary>Second Floor</summary>
+                <ul>
+                  <li>Office of Student Affairs</li>
+                  <li>Center for Guidance & Counseling Services</li>
+                  <li>Center for Internship, Placement & Alumni Affairs</li>
+                  <li>Center for Sports & Athletics Development</li>
+                  <li>Center for Culture and the Arts</li>
+                  <li>Prefect for Student Organizations</li>
+                  <li>Prefect of Discipline</li>
+                  <li>Command Center</li>
+                </ul>
+              </details>
+              <details>
+                <summary>Third Floor</summary>
+                <ul>
+                  <li>University Student Council Office</li>
+                  <li>The Warden Publication</li>
+                  <li>Cultural Hall</li>
+                  <li>PLMun Chorale Room</li>
+                  <li>Design Center for Nation Building</li>
+                  <li>Reserve Officers Training Corps</li>
+                </ul>
+              </details>
+            </div>
+          </div>
+
+          <!-- Bonifacio Building -->
+          <div class="building-card">
+            <button class="building-header">
+              Bonifacio Building (Building 2)
+              <span class="building-icon">+</span>
+            </button>
+            <div class="building-content">
+              <details>
+                <summary>First Floor</summary>
+                <ul>
+                  <li>Office of the AVP for Administration</li>
+                  <li>Office of the Building Administrator</li>
+                  <li>University Admission Center</li>
+                  <li>University Business Center</li>
+                  <li>Records Management Office</li>
+                  <li>Supply & Property Management Office</li>
+                  <li>Soroptimist International Alabang Hall</li>
+                  <li>Executive Lounge</li>
+                  <li>Medical & Dental Clinic</li>
+                  <li>Criminalistic Laboratories</li>
+                </ul>
+              </details>
+              <details>
+                <summary>Second Floor</summary>
+                <ul>
+                  <li>Office of the AVP for Technology Integration</li>
+                  <li>Information Communication Technology Office</li>
+                  <li>CITCS Faculty and Dean's Office</li>
+                  <li>Computer Laboratories 1 to 8</li>
+                  <li>Speech Laboratory</li>
+                </ul>
+              </details>
+              <details>
+                <summary>Third Floor</summary>
+                <ul>
+                  <li>CAS Faculty and Dean's Office</li>
+                  <li>Psychology Laboratory</li>
+                  <li>Studio Theater</li>
+                  <li>Radio Room</li>
+                </ul>
+              </details>
+              <details>
+                <summary>Fourth Floor</summary>
+                <ul>
+                  <li>CTE Faculty and Dean's Office</li>
+                  <li>Audio Visual Room</li>
+                </ul>
+              </details>
+            </div>
+          </div>
+
+          <!-- Del Pilar Building -->
+          <div class="building-card">
+            <button class="building-header">
+              Del Pilar Building (Building 3)
+              <span class="building-icon">+</span>
+            </button>
+            <div class="building-content">
+              <details>
+                <summary>First Floor</summary>
+                <ul>
+                  <li>Office of the University President</li>
+                  <li>Office of the Vice President for Academic Affairs</li>
+                  <li>Office of the Vice President for Administration & Finance</li>
+                  <li>Office of the Vice President for Students' Life and Development</li>
+                  <li>Office of the AVP for Finance</li>
+                  <li>Accounting Office</li>
+                  <li>Office of the University Secretary</li>
+                  <li>Center for Planning & Development Services</li>
+                  <li>Center for Marketing & Corporate Communications</li>
+                  <li>Center for Quality Management & Development</li>
+                  <li>University Board Room</li>
+                  <li>Emerald Hall</li>
+                  <li>Students Lounge</li>
+                </ul>
+              </details>
+              <details>
+                <summary>Second Floor</summary>
+                <ul>
+                  <li>Center for Multimedia & Laboratory Management</li>
+                  <li>Technical Room</li>
+                </ul>
+              </details>
+              <details>
+                <summary>Third Floor</summary>
+                <ul>
+                  <li>CBA Faculty and Dean's Office</li>
+                  <li>Simulation Room</li>
+                  <li>Health & Fitness Room 1</li>
+                </ul>
+              </details>
+              <details>
+                <summary>Fourth Floor</summary>
+                <ul>
+                  <li>Biology, Physics & Chemistry Laboratories</li>
+                  <li>Health & Fitness Room 2</li>
+                </ul>
+              </details>
+              <details>
+                <summary>Fifth Floor</summary>
+                <ul>
+                  <li>Lecture Rooms</li>
+                </ul>
+              </details>
+            </div>
+          </div>
+
+          <!-- Rizal Building -->
+          <div class="building-card">
+            <button class="building-header">
+              Rizal Building (Building 4)
+              <span class="building-icon">+</span>
+            </button>
+            <div class="building-content">
+              <details>
+                <summary>First Floor</summary>
+                <ul>
+                  <li>Innovation Hub</li>
+                  <li>University Library</li>
+                  <li>General Services Office</li>
+                </ul>
+              </details>
+              <details>
+                <summary>Second Floor</summary>
+                <ul>
+                  <li>CCTV Room & Security Office</li>
+                  <li>Institute of Public Policy & Governance</li>
+                  <li>Institute of Integrated Development Education</li>
+                  <li>CCJ Faculty & Dean's Office</li>
+                  <li>Office of the VPREQALIA</li>
+                  <li>College of Graduate Studies</li>
+                  <li>Human Resource Development and Management Office</li>
+                  <li>Gender & Development Office</li>
+                </ul>
+              </details>
+              <details>
+                <summary>Third Floor</summary>
+                <ul>
+                  <li>Heroes Hall</li>
+                  <ul>
+                    <li>Melchora Aquino Hall</li>
+                    <li>Gabriela Silang Hall</li>
+                    <li>Josefa Llanes Escoda Hall</li>
+                    <li>Sultan Kudarat Hall</li>
+                    <li>Gregorio Del Pilar Hall</li>
+                    <li>GOMBURZA Hall</li>
+                    <li>Antonio Luna Hall</li>
+                    <li>Graciano Lopez-Jaena Hall</li>
+                  </ul>
+                </ul>
+              </details>
+              <details>
+                <summary>Fourth Floor</summary>
+                <ul>
+                  <li>College of Medicine</li>
+                </ul>
+              </details>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <p>© 2025 Pamantasan ng Lungsod ng Muntinlupa | All Rights Reserved</p>
+        <p>Contact us at <a href="mailto:info@plmun.edu.ph">info@plmun.edu.ph</a></p>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <!-- JAVASCRIPT LOGIC (MODULAR & SHORTENED ROOM DIRECTORY) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // ==========================================
+      // 1. AI ASSISTANT FEATURE (MODULAR DIRECTORY)
+      // ==========================================
+      const userInput = document.getElementById('user-input');
+      const sendButton = document.getElementById('send-button');
+      const clearButton = document.getElementById('clear-btn');
+      const aiResponseDiv = document.getElementById('ai-response');
+      const aiImageDiv = document.getElementById('ai-image');
+
+      // Central Campus Location Directory (Data Object)
+      const campusDirectory = {
+        // --- BONIFACIO BUILDING (Building 2) ---
+        "clinic": {
+          text: "🏥 Medical & Dental Clinic: 1st floor, Bonifacio Building (Building 2).",
+          image: "images/clinic.png"
+        },
+        "admission": {
+          text: "📋 University Admission Center: 1st floor, Bonifacio Building (Building 2).",
+          image: "images/admin.png"
+        },
+        "ict": {
+          text: "💻 ICT Office & Computer Labs 1-8: 2nd floor, Bonifacio Building (Building 2).",
+          image: "images/admin.png"
+        },
+        "citcs": {
+          text: "🖥️ CITCS Faculty & Dean's Office: 2nd floor, Bonifacio Building (Building 2).",
+          image: "images/admin.png"
+        },
+        "cas": {
+          text: "🎭 CAS Faculty & Studio Theater: 3rd floor, Bonifacio Building (Building 2).",
+          image: "images/admin.png"
+        },
+
+        // --- MABINI BUILDING (Building 1) ---
+        "registrar": {
+          text: "📝 Office of the Registrar: 1st floor, Mabini Building (Building 1).",
+          image: "images/Building3.png"
+        },
+        "treasury": {
+          text: "💳 Treasury Office: 1st floor, Mabini Building (Building 1).",
+          image: "images/Building3.png"
+        },
+        "osa": {
+          text: "🤝 Office of Student Affairs (OSA): 2nd floor, Mabini Building (Building 1).",
+          image: "images/Building3.png"
+        },
+        "usc": {
+          text: "🏛️ University Student Council (USC) Office: 3rd floor, Mabini Building (Building 1).",
+          image: "images/Building3.png"
+        },
+
+        // --- RIZAL BUILDING (Building 4) ---
+        "library": {
+          text: "📚 University Library & Innovation Hub: 1st floor, Rizal Building (Building 4).",
+          image: "images/Research Building.png"
+        },
+        "hr": {
+          text: "👔 Human Resource Office: 2nd floor, Rizal Building (Building 4).",
+          image: "images/Research Building.png"
+        },
+        "heroes hall": {
+          text: "🎓 Heroes Hall (Function Rooms): 3rd floor, Rizal Building (Building 4).",
+          image: "images/Research Building.png"
+        },
+
+        // --- DEL PILAR BUILDING (Building 3) ---
+        "president": {
+          text: "👑 Office of the University President: 1st floor, Del Pilar Building (Building 3).",
+          image: "images/Building2.png"
+        },
+        "cba": {
+          text: "📊 CBA Faculty & Dean's Office: 3rd floor, Del Pilar Building (Building 3).",
+          image: "images/Building2.png"
+        },
+
+        // --- GENERAL UTILITIES ---
+        "gym": {
+          text: "🏀 University Gymnasium: Located at the central campus ground.",
+          image: "images/gym.jpg"
+        },
+        "restroom": {
+          text: "Restroom / Comfort Room: Ground floor of Bonifacio Building near the main lobby.",
+          image: "images/admin.png"
+        },
+        "comfort room": {
+          text: "Restroom / Comfort Room: Ground floor of Bonifacio Building near the main lobby.",
+          image: "images/admin.png"
+        }
+      };
+
+      // Unified Search Processor
+      function processUserQuestion() {
+        if (!userInput) return;
+        const query = userInput.value.toLowerCase().trim();
+        if (!query) return;
+
+        let foundMatch = false;
+        aiImageDiv.innerHTML = ""; // Clear existing image
+
+        for (let key in campusDirectory) {
+          if (query.includes(key)) {
+            const location = campusDirectory[key];
+            
+            aiResponseDiv.textContent = location.text;
+            
+            if (location.image) {
+              const img = document.createElement("img");
+              img.src = location.image;
+              img.alt = key;
+              img.className = "ai-facility-image";
+              aiImageDiv.appendChild(img);
+            }
+
+            foundMatch = true;
+            break;
+          }
+        }
+
+        if (!foundMatch) {
+          aiResponseDiv.textContent = "❓ Sorry, I don't have information for that exact room. Try searching for: clinic, library, registrar, admission, citcs, treasury, or president.";
+        }
+      }
+
+      if (sendButton) sendButton.addEventListener('click', processUserQuestion);
+      if (userInput) {
+        userInput.addEventListener('keypress', (e) => {
+          if (e.key === 'Enter') processUserQuestion();
+        });
+      }
+      if (clearButton) {
+        clearButton.addEventListener('click', () => {
+          userInput.value = "";
+          aiResponseDiv.textContent = "Hello! How can I help you navigate PLMun today?";
+          aiImageDiv.innerHTML = "";
+          userInput.focus();
+        });
+      }
+
+      // ==========================================
+      // 2. CAMPUS MAP PIN HOVER FEATURE
+      // ==========================================
+      const mapPins = document.querySelectorAll('.map-pin');
+      const mapPopup = document.getElementById('mapPopup');
+      const popupImg = document.getElementById('popupImg');
+      const popupTitle = document.getElementById('popupTitle');
+      const popupDesc = document.getElementById('popupDesc');
+
+      if (mapPins.length > 0 && mapPopup) {
+        mapPins.forEach(pin => {
+          pin.addEventListener('mouseenter', () => {
+            const title = pin.getAttribute('data-title');
+            const image = pin.getAttribute('data-image');
+            const desc = pin.getAttribute('data-desc') || '';
+
+            if (popupTitle) popupTitle.textContent = title;
+            if (popupImg) popupImg.src = image;
+            if (popupDesc) popupDesc.textContent = desc;
+            
+            mapPopup.style.display = 'block';
+            mapPopup.style.top = (pin.offsetTop - 120) + 'px';
+            mapPopup.style.left = (pin.offsetLeft + 10) + 'px';
+          });
+
+          pin.addEventListener('mouseleave', () => {
+            mapPopup.style.display = 'none';
+          });
+        });
+      }
+
+      // ==========================================
+      // 3. OFFICE DIRECTORY ACCORDION FEATURE
+      // ==========================================
+      const buildingCards = document.querySelectorAll('.building-card');
+
+      buildingCards.forEach(card => {
+        const header = card.querySelector('.building-header');
+        if (!header) return;
+
+        header.addEventListener('click', () => {
+          const isAlreadyOpen = card.classList.contains('active');
+
+          buildingCards.forEach(otherCard => {
+            otherCard.classList.remove('active');
+          });
+
+          if (!isAlreadyOpen) {
+            card.classList.add('active');
+          }
+        });
+      });
+
+    });
+  </script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

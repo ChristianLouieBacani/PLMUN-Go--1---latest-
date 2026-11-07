@@ -1,0 +1,2951 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f9fafb;
+  overflow-x: hidden;
+}
+
+main {
+  flex: 1;
+}
+
+/* WRAPPER */
+.wrapper {
+  max-width: 2000px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+/* TOP NAV */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #081e42;
+  z-index: 1000;
+  transition: all s ease;
+}
+
+/* NAVBAR WHEN SCROLLED */
+.top-nav.scrolled {
+    background: linear-gradient(
+        to bottom,
+        rgba(220, 225, 232, 0.88) 0%,
+        rgba(134, 164, 206, 0.65) 55%,
+        rgba(47, 75, 114, 0.15) 100%
+    );
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 18px rgba(8, 30, 66, 0.08);
+}
+
+/* LOGO TEXT */
+.top-nav.scrolled .logo h1 {
+  color: #081e42;
+}
+
+/* NAV LINKS */
+.top-nav.scrolled .nav-links a {
+  color: #081e42;
+}
+
+/* ACTIVE LINK */
+.top-nav.scrolled .nav-links a.active {
+  color: #D5A900;
+}
+
+
+.top-nav {
+  background-color: #081e42;
+}
+
+body.about .top-nav,
+body.contact .top-nav,
+body.student .top-nav,
+body.organization .top-nav,
+body.services .top-nav,
+body.campusmap .top-nav {
+  background-color: #081e42;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  width: 45px;
+  height: 45px;
+}
+
+.top-nav h1 {
+  color: #f5f5f5;
+}
+
+.top-nav .nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.top-nav .nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.top-nav .nav-links a:hover {
+  color: #ffd700;
+}
+
+/* Hamburger toggle for mobile */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .top-nav .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    background-color: rgba(8, 30, 66, 0.95);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
+  }
+
+  .top-nav .nav-links.active {
+    display: flex;
+  }
+
+  .top-nav .nav-links a {
+    margin: 5px 20px;
+    font-size: 16px;
+  }
+}
+
+/* HERO SECTION */
+.hero {
+  background-image: url('images/plmun.png');
+  background-size: cover;
+  background-position: center;
+  height: 40vh;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  text-align: center;
+  padding: 0 10px;
+  padding-top: 30px; 
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  max-width: 90%;
+}
+
+.hero-text h1 {
+  font-size: 3em;
+}
+
+.hero-text p {
+  font-size: 1.2em;
+}
+
+/* HERO SECTION RESPONSIVE */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 60px; /* slightly smaller padding on phones */
+  }
+
+  .hero-text h1 {
+    font-size: 1.8em;
+  }
+
+  .hero-text p {
+    font-size: 1em;
+  }
+}
+
+/* LOWER NAV */
+.lower-nav {
+  background-color: #081e42;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 15px 0;
+}
+
+.lower-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.lower-nav a:hover {
+  color: #ffd700;
+}
+
+/*.lower-nav {
+  background-color: #081e42;
+  height: 40px; 
+  width: 100%;
+}*/
+
+
+@media (max-width: 768px) {
+  .lower-nav {
+    display: flex;
+    flex-wrap: nowrap;         /* Never wrap */
+    justify-content: space-between; /* Spread evenly */
+    overflow-x: auto;          /* Allow horizontal scroll if needed */
+    padding: 10px 15px;
+    gap: 10px;
+  }
+
+  .lower-nav a {
+    flex: 0 0 auto;            /* Prevent shrinking */
+    font-size: 10px;           /* Adjust font for mobile */
+    white-space: nowrap;        /* Prevent text from breaking */
+    margin: 0;                  /* Remove extra margin */
+  }
+
+  /* Optional: hide scrollbar for cleaner look */
+  .lower-nav::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+/* ABOUT SECTION */
+.about {
+  padding: 35px 10%;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.about h1 {
+  color: #081e42;
+  margin-bottom: 3px;
+}
+
+.campus-map-img {
+  width: 100%;
+  max-width: 950px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+/* MAP WRAPPER AND PINS */
+.map-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.map-pin {
+  width: 18px;
+  height: 18px;
+  background: rgb(247, 247, 247);
+  border-radius: 50%;
+  position: absolute;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease;
+  animation: pulse 1.3s infinite ease-out;
+}
+
+.map-pin:hover {
+  transform: scale(1.3) translate(-50%, -50%);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(77, 106, 142, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(10, 58, 117, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(10, 58, 117, 0);
+  }
+}
+
+.map-popup {
+  position: absolute;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  width: 230px;
+  display: none;
+  z-index: 999;
+}
+
+.map-popup img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.map-wrapper {
+  position: relative; /* Required for pin & popup positioning */
+}
+
+.map-popup {
+  display: none; /* Hidden by default */
+  position: absolute;
+  z-index: 1000;
+  background: #ffffff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  pointer-events: none; /* Prevents flickering when hovering */
+}
+
+.map-popup img {
+  max-width: 150px;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+
+/* `DIRECTORY SECTION */
+/* Office Directory*/
+.office-directory {
+  margin: 40px 10%;
+}
+
+.office-directory.has-open-building {
+  padding-bottom: 380px;
+}
+
+.directory-title {
+  font-size: 32px;
+  margin-bottom: 18px;
+  font-weight: 700;
+  color: #081e42;
+  text-align: left;
+}
+
+/* 4. Directory Grid layout alignment */
+.office-directory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  align-items: start; /* Keeps neighboring card aligned to the top */
+}
+
+/* 1. Ensure building cards use static positioning and expand vertically */
+.building-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  height: auto !important; /* Allows height to expand dynamically */
+  transition: all 0.3s ease;
+}
+
+
+/* Header looks like UMak: minimal, bold */
+.building-header {
+  width: 100%;
+  padding: 16px 18px;
+  text-align: left;
+  background: #ffffff;
+  border: none;
+  font-size: 18px;
+  font-weight: 700;
+  color: #122048;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.building-header:hover {
+  background-color: #ebf2c0;
+}
+
+
+/* plus/minus icon */
+.building-icon {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  font-weight: 700;
+  border-radius: 6px;
+  background: #f3f6fb;
+  color: #0d2361;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+/* WRAPPER (pushes footer) */
+.building-content-wrapper {
+  position: relative;
+  overflow: visible;
+  max-height: 0;
+  transition: max-height 0.35s ease;
+}
+
+/* 2. Hidden content when card is closed */
+.building-content {
+  display: none;
+  position: static !important; /* Removes absolute positioning */
+  padding: 16px 20px;
+  background: #ffffff;
+  border-top: 1px solid #f1f5f9;
+}
+
+/* 3. Show content in standard document flow when active */
+.building-card.active .building-content {
+  display: block !important;
+}
+
+/* details (floor) styling — native but styled cleanly */
+.building-content details {
+  margin-bottom: 10px;
+  background: transparent;
+  border-radius: 6px;
+  padding: 0;
+}
+
+.building-content summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #fafafa;
+  border: 1px solid #eee;
+  display: block;
+}
+
+.building-content summary::-webkit-details-marker {
+  display: none;
+}
+
+.building-content details[open] summary {
+  background: #fff;
+  border-color: #e6eefc;
+  box-shadow: 0 4px 12px rgba(10,45,120,0.04);
+}
+
+.building-content ul {
+  margin: 8px 12px 12px 18px;
+  padding: 0;
+}
+
+.building-content ul li {
+  margin: 6px 0;
+  color: #333;
+  font-size: 15px;
+}
+
+.building-card {
+  align-self: start;
+}
+
+
+/* Active state for header icon */
+.building-card.active .building-icon {
+  transform: rotate(45deg);
+  background: #eaf1ff;
+}
+
+/* Responsive adjustment for phones */
+@media (max-width: 768px) {
+  .office-directory-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ORGANIZATION IMAGES */
+img {
+  width: 100px;
+  height: 100px;
+}
+
+
+/* FOOTER */
+footer {
+  width: 100%;
+  background-color: #081e42;
+  color: white;
+  text-align: center;
+  padding: 20px 0;  
+  font-size: 14px;
+  margin-top: auto;
+}
+
+footer a {
+  color: #FFEB3B;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* CONTACT PAGE */
+body.contact {
+  background-color: #ffffff;
+}
+
+.content {
+  max-width: 600px;
+  margin: 100px auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.content h1 {
+  color: #081e42;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.content p {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #444;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: 500;
+  color: #222;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #004225;
+  outline: none;
+}
+
+button {
+  background-color: #081e42;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #ebf2c0;
+}
+
+/* RESPONSIVE FIXES */
+@media (max-width: 1024px) {
+  .hero-text h1 {
+    font-size: 2.5em;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2em;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 280px;
+  }
+
+  .map-pin {
+    width: 14px;
+    height: 14px;
+  }
+
+  .map-popup {
+    width: 180px;
+    font-size: 14px;
+  }
+}
+
+.google-maps-link {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.google-maps-link a {
+  display: inline-block;
+  background-color: #081e42;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.google-maps-link a:hover {
+  background-color: #ebf2c0;
+  color: #081e42;
+}
+
+
+/* GOOGLE MAPS PREVIEW */
+.google-map-preview {
+  position: relative;
+  width: 85%;
+  max-width: 850px;
+  margin: 30px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+}
+
+.google-map-preview iframe {
+  display: block;
+  width: 100%;
+  height: 350px;
+  border: none;
+}
+
+.open-maps-button {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: white;
+  color: #333;
+  padding: 12px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+.open-maps-button:hover {
+  background: #f1f1f1;
+  color: #081e42;
+}
+
+/* AI FACILITY PHOTO */
+.ai-facility-image {
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-top: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+
+/* AI ASSISTANT - FLOATING PANEL OVER CAMPUS MAP */
+.ai-section {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    z-index: 1;
+    margin: 30px auto;
+
+    width: 90%;
+    max-width: 650px;
+    padding: 18px;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: 1fr 180px;
+    gap: 12px;
+
+    background: linear-gradient(135deg, rgba(8, 30, 66, 0.96), rgba(91, 75, 160, 0.94));
+    color: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.ai-section h2,
+.ai-section p {
+    grid-column: 1 / -1;
+    margin: 0;
+}
+
+.ai-section h2 {
+    font-size: 20px;
+}
+
+.ai-section p {
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+#user-input {
+    grid-column: 1;
+    width: 100%;
+    min-width: 0;
+    padding: 11px 13px;
+    border: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+#send-button {
+    grid-column: 2;
+    grid-row: 3;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #081e42;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#ai-response {
+    grid-column: 1;
+    grid-row: 4;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    line-height: 1.5;
+    min-height: 65px;
+}
+
+#ai-image {
+    grid-column: 2;
+    grid-row: 4;
+    min-width: 0;
+}
+
+.ai-facility-image {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0;
+}
+
+/* Keep the panel usable on smaller screens */
+@media (max-width: 600px) {
+    .ai-section {
+        width: 94%;
+        grid-template-columns: 1fr;
+    }
+
+    #user-input,
+    #send-button,
+    #ai-response,
+    #ai-image {
+        grid-column: 1;
+        grid-row: auto;
+    }
+}
+
+/* ==========================================================================
+   ENHANCED ABOUT PAGE STYLES
+   ========================================================================== */
+
+.about-page {
+  padding: 100px 8% 60px;
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  color: #081e42;
+  margin-bottom: 8px;
+}
+
+.section-header p {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+/* --- Hero Section --- */
+.about-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  margin-bottom: 50px;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #e0f2fe;
+  color: #0284c7;
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.hero-text h2 {
+  font-size: 2.2rem;
+  color: #081e42;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.hero-text p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #475569;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-width: 260px;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+}
+
+/* --- History Timeline Section --- */
+.history-section {
+  margin-bottom: 60px;
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  position: relative;
+}
+
+.timeline-item {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.timeline-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.timeline-icon {
+  width: 48px;
+  height: 48px;
+  background: #081e42;
+  color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.timeline-content .year {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0284c7;
+  text-transform: uppercase;
+}
+
+.timeline-content h3 {
+  font-size: 1.25rem;
+  color: #081e42;
+  margin: 6px 0 10px;
+}
+
+.timeline-content p {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* --- Mission & Vision Grid --- */
+.mv-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.mv-card {
+  padding: 36px;
+  border-radius: 16px;
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.vision-card {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+}
+
+.mission-card {
+  background: linear-gradient(135deg, #081e42 0%, #0f172a 100%);
+}
+
+.mv-icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  opacity: 0.9;
+}
+
+.mv-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+.mv-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+/* --- Core Values Grid --- */
+.values-section {
+  margin-bottom: 40px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.value-card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+  transition: all 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-6px);
+  border-color: #0284c7;
+  box-shadow: 0 10px 20px rgba(2, 132, 199, 0.12);
+}
+
+.val-icon {
+  width: 50px;
+  height: 50px;
+  background: #f0f9ff;
+  color: #0284c7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin: 0 auto 14px;
+}
+
+.value-card h4 {
+  font-size: 1rem;
+  color: #081e42;
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .hero-image {
+    order: -1;
+  }
+  
+  .mv-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   STUDENT LIFE PAGE STYLES (PORTAL & DASHBOARD DESIGN)
+   ========================================================================== */
+
+.student-page {
+  padding: 100px 8% 60px;
+  background-color: #f1f5f9;
+}
+
+.student-section {
+  margin-bottom: 50px;
+}
+
+.section-title {
+  margin-bottom: 24px;
+}
+
+.section-title h2 {
+  font-size: 1.8rem;
+  color: #081e42;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-gold {
+  color: #eab308;
+}
+
+.section-title p {
+  color: #64748b;
+  font-size: 0.98rem;
+  margin-top: 4px;
+}
+
+/* --- Hero Banner --- */
+.student-hero {
+  background: linear-gradient(135deg, #081e42 0%, #1e3a8a 60%, #0284c7 100%);
+  color: #ffffff;
+  padding: 45px 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(8, 30, 66, 0.15);
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.student-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  color: #fde047;
+}
+
+.hero-content h1 {
+  font-size: 2.4rem;
+  margin-bottom: 14px;
+}
+
+.hero-content p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 850px;
+  opacity: 0.92;
+}
+
+.quick-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.pill-badge {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* --- Academic Support Cards --- */
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.support-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.support-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #0284c7;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.support-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.support-card:hover::before {
+  opacity: 1;
+}
+
+.support-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 18px;
+}
+
+.support-icon.blue { background: #e0f2fe; color: #0284c7; }
+.support-icon.green { background: #dcfce7; color: #16a34a; }
+.support-icon.purple { background: #f3e8ff; color: #9333ea; }
+
+.support-card h3 {
+  color: #081e42;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.support-card p {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* --- Scholarship Cards --- */
+.scholarship-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.scholar-item {
+  background: #ffffff;
+  padding: 22px 28px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.scholar-item:hover {
+  transform: translateX(6px);
+  border-color: #3b82f6;
+}
+
+.scholar-badge {
+  width: 48px;
+  height: 48px;
+  background: #fef3c7;
+  color: #d97706;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.scholar-details h3 {
+  font-size: 1.1rem;
+  color: #081e42;
+  margin-bottom: 2px;
+}
+
+.scholar-details .sub-text {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #2563eb;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.scholar-details p {
+  font-size: 0.92rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* --- Campus Experience Banner --- */
+.campus-experience-banner {
+  background: #0f172a;
+  color: #ffffff;
+  padding: 40px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.banner-text h2 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  color: #38bdf8;
+}
+
+.banner-text p {
+  max-width: 700px;
+  margin: 0 auto 20px;
+  color: #94a3b8;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.banner-motto {
+  display: inline-block;
+  background: #0284c7;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 10px 24px;
+  border-radius: 30px;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .scholar-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ==========================================================================
+   EQUAL 4-PHOTO GALLERY GRID
+   ========================================================================== */
+
+.equal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.equal-item {
+  position: relative;
+  height: 240px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.equal-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.equal-item:hover img {
+  transform: scale(1.06);
+}
+
+.equal-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8, 30, 66, 0.85) 0%, transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.equal-item:hover .equal-overlay {
+  opacity: 1;
+}
+
+.equal-overlay span {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive adjustment for small mobile screens */
+@media (max-width: 600px) {
+  .equal-grid {
+    grid-template-columns: 1fr;
+  }
+  .equal-item {
+    height: 200px;
+  }
+}
+
+/* ==========================================================================
+   ORGANIZATION PAGE (SPLIT CONTENT WITH STANDARD NAV & FOOTER)
+   ========================================================================== */
+
+/* --- Ensure grid items stretch to match each other's full height --- */
+.org-split-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 110px 8% 60px;
+  align-items: stretch; /* <--- Change from 'start' to 'stretch' */
+}
+
+/* --- Left Side: Building Image Pane --- */
+.org-image-pane {
+  background-image: url('images/Research Building.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%; /* <--- Change from 580px to 100% */
+  min-height: 580px; /* Ensures it stays tall even on shorter screens */
+  border-radius: 20px;
+  position: sticky;
+  top: 110px;
+  box-shadow: 0 10px 30px rgba(8, 30, 66, 0.12);
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+  overflow: hidden;
+}
+
+.image-caption-badge {
+  background: rgba(8, 30, 66, 0.85);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.image-caption-badge i {
+  color: #fde047; /* Gold icon */
+}
+
+/* --- Right Side: Content Blocks --- */
+.org-text-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.org-header-block {
+  margin-bottom: 8px;
+}
+
+.org-header-block h1 {
+  font-size: 2.2rem;
+  color: #081e42;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.org-header-block p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #64748b;
+}
+
+/* Styled Content Cards */
+.org-card {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.org-card:hover {
+  transform: translateY(-4px);
+  border-color: #0284c7;
+}
+
+.org-card h2 {
+  font-size: 1.3rem;
+  color: #081e42;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.org-card p {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #64748b;
+}
+
+/* Styled Bullet Points with Checkmarks */
+.styled-org-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.styled-org-list li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 14px;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+.styled-org-list li:last-child {
+  margin-bottom: 0;
+}
+
+.styled-org-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #16a34a; /* Green checkmark */
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.styled-org-list li strong {
+  color: #081e42;
+}
+
+/* Icon Colors */
+.icon-gold { color: #eab308; }
+.icon-blue { color: #0284c7; }
+
+/* Responsive adjustments for smaller devices */
+@media (max-width: 992px) {
+  .org-split-container {
+    grid-template-columns: 1fr;
+    padding-top: 100px;
+  }
+
+  .org-image-pane {
+    position: relative;
+    top: 0;
+    height: 320px;
+  }
+}
+
+/* ==========================================================================
+   ADMISSIONS PAGE (FLOWCHART & ACCORDION DESIGN)
+   ========================================================================== */
+
+.admissions-container {
+  padding: 40px 8% 60px;
+  background-color: #f8fafc;
+}
+
+/* Sub-nav banner header */
+.sub-nav-hero {
+  background: linear-gradient(rgba(8, 30, 66, 0.85), rgba(8, 30, 66, 0.85)), url('images/Research Building.png');
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  padding-top: 100px;
+  text-align: center;
+}
+
+.hero-overlay-text {
+  padding: 30px 20px;
+}
+
+.hero-overlay-text h1 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+}
+
+.hero-overlay-text p {
+  color: #93c5fd;
+  font-size: 1rem;
+  margin-top: 6px;
+}
+
+.sub-nav-bar {
+  display: flex;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  overflow-x: auto;
+}
+
+.sub-link {
+  color: #94a3b8;
+  padding: 14px 24px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.sub-link:hover, .sub-link.active {
+  color: #ffffff;
+  border-bottom-color: #38bdf8;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Intro Section */
+.adm-intro {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+
+.adm-intro h2 {
+  color: #081e42;
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.adm-intro p {
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Section Header Titles */
+.adm-section-header {
+  margin-bottom: 24px;
+}
+
+.adm-section-header h3 {
+  font-size: 1.4rem;
+  color: #081e42;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.adm-section-header p {
+  color: #64748b;
+  font-size: 0.92rem;
+  margin-top: 4px;
+}
+
+/* --- 1. Step-by-Step Connected Flowchart --- */
+.process-flowchart {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.flow-step {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  padding-bottom: 28px;
+}
+
+/* Vertical connecting line */
+.flow-step:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 22px;
+  top: 45px;
+  bottom: 0;
+  width: 3px;
+  background: #cbd5e1;
+}
+
+.step-number {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #0284c7;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);
+  z-index: 2;
+}
+
+.step-content {
+  background: #ffffff;
+  padding: 18px 24px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.step-content h4 {
+  font-size: 1.1rem;
+  color: #081e42;
+  margin-bottom: 4px;
+}
+
+.step-content p {
+  font-size: 0.92rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* --- 2. Tuition Callout Banner --- */
+.tuition-callout {
+  background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+  color: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 25px rgba(4, 120, 87, 0.15);
+}
+
+.tuition-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.2);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.tuition-callout h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.tuition-callout p {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+/* --- 3. Interactive Accordions (HTML <details>) --- */
+.accordion-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.accordion-item {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.accordion-item[open] {
+  border-color: #0284c7;
+}
+
+.accordion-header {
+  padding: 18px 24px;
+  font-weight: 600;
+  color: #081e42;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none; /* Hide default browser triangle */
+  user-select: none;
+}
+
+.accordion-header::-webkit-details-marker {
+  display: none;
+}
+
+.accordion-header span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05rem;
+}
+
+.arrow-icon {
+  color: #64748b;
+  transition: transform 0.3s ease;
+}
+
+.accordion-item[open] .arrow-icon {
+  transform: rotate(180deg);
+  color: #0284c7;
+}
+
+.accordion-body {
+  padding: 0 24px 20px;
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   ACADEMIC PROGRAMS PAGE STYLES
+   ========================================================================== */
+
+.programs-container {
+  padding: 40px 8% 60px;
+  background-color: #f8fafc;
+}
+
+.prog-intro {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.prog-intro h2 {
+  color: #081e42;
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.prog-intro p {
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.prog-section-header {
+  margin-bottom: 24px;
+}
+
+.prog-section-header h3 {
+  font-size: 1.4rem;
+  color: #081e42;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.prog-section-header p {
+  color: #64748b;
+  font-size: 0.92rem;
+  margin-top: 4px;
+}
+
+/* College Grid Layout */
+.college-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.college-card {
+  background: #ffffff;
+  padding: 26px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.college-card:hover {
+  transform: translateY(-5px);
+  border-color: #0284c7;
+}
+
+.college-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.college-badge.blue { background: #e0f2fe; color: #0284c7; }
+.college-badge.green { background: #dcfce7; color: #16a34a; }
+.college-badge.red { background: #fee2e2; color: #dc2626; }
+.college-badge.purple { background: #f3e8ff; color: #9333ea; }
+.college-badge.orange { background: #ffedd5; color: #ea580c; }
+.college-badge.teal { background: #ccfbf1; color: #0d9488; }
+.college-badge.yellow { background: #fef3c7; color: #d97706; }
+
+.college-card h4 {
+  font-size: 1.1rem;
+  color: #081e42;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+.college-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.college-card li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.92rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.college-card li::before {
+  content: '•';
+  position: absolute;
+  left: 4px;
+  color: #0284c7;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* Split Row for Graduate and Special Programs */
+.split-programs-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.special-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.special-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #081e42;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.special-badge.gold {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.special-card h3 {
+  font-size: 1.3rem;
+  color: #081e42;
+  margin-bottom: 14px;
+}
+
+.special-desc {
+  font-weight: 700;
+  color: #0284c7;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.special-list {
+  list-style: none;
+  padding: 0;
+}
+
+.special-list li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 10px;
+  font-size: 0.94rem;
+  color: #475569;
+}
+
+.special-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #16a34a;
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .split-programs-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   PLMUN NEWS PAGE (TEXT-ONLY COMPONENT DESIGN)
+   ========================================================================== */
+
+.news-container {
+  padding: 40px 8% 60px;
+  background-color: #f8fafc;
+}
+
+.news-intro {
+  margin-bottom: 30px;
+}
+
+.news-intro h2 {
+  font-size: 1.8rem;
+  color: #081e42;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.news-intro p {
+  color: #64748b;
+  font-size: 1rem;
+  margin-top: 6px;
+}
+
+/* --- Featured Top News Story --- */
+.featured-news-card {
+  background: linear-gradient(135deg, #081e42 0%, #1e3a8a 100%);
+  color: #ffffff;
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(8, 30, 66, 0.15);
+  margin-bottom: 35px;
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-tag {
+  display: inline-block;
+  background: rgba(234, 179, 8, 0.2);
+  color: #fde047;
+  border: 1px solid rgba(234, 179, 8, 0.4);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.featured-body {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.featured-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.featured-content p {
+  color: #cbd5e1;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* --- Date Badge Graphic --- */
+.date-badge {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #081e42;
+  min-width: 65px;
+  height: 65px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.date-badge.gold {
+  background: #fde047;
+  color: #081e42;
+  border: none;
+}
+
+.date-badge .day {
+  font-size: 1.1rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.date-badge .month {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+/* --- News Feed Cards --- */
+.news-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.news-item-card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  gap: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  align-items: flex-start;
+}
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.category-pill {
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.category-pill.blue { background: #e0f2fe; color: #0284c7; }
+.category-pill.green { background: #dcfce7; color: #16a34a; }
+.category-pill.purple { background: #f3e8ff; color: #9333ea; }
+
+.read-time {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.news-item-content h3 {
+  font-size: 1.25rem;
+  color: #081e42;
+  margin-bottom: 8px;
+}
+
+.news-item-content p {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* --- Official Portal Button Banner --- */
+.official-portal-banner {
+  background: #ffffff;
+  border: 2px dashed #cbd5e1;
+  padding: 24px 30px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.portal-text h4 {
+  font-size: 1.1rem;
+  color: #081e42;
+  margin-bottom: 4px;
+}
+
+.portal-text p {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.portal-btn {
+  background: #0284c7;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .featured-body, .news-item-card, .official-portal-banner {
+    flex-direction: column;
+  }
+}
+
+/* ==========================================================================
+   CAMPUS LIFE PAGE (TEXT FACILITIES & STUDENT ACTIVITY PHOTO CARDS)
+   ========================================================================== */
+
+.cl-container {
+  padding: 40px 8% 60px;
+  background-color: #f8fafc;
+}
+
+.cl-intro {
+  margin-bottom: 35px;
+}
+
+.cl-intro h2 {
+  font-size: 1.8rem;
+  color: #081e42;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cl-intro p {
+  color: #64748b;
+  font-size: 1.02rem;
+  margin-top: 6px;
+  line-height: 1.6;
+}
+
+/* Fixed 2x2 Equal Grid for Facilities */
+.facility-text-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Forces exactly 2 columns */
+  gap: 24px;
+  margin-bottom: 45px;
+}
+
+/* Responsive fix for mobile devices */
+@media (max-width: 650px) {
+  .facility-text-grid {
+    grid-template-columns: 1fr; /* Stacks to 1 column on small phones */
+  }
+}
+
+.facility-text-card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.facility-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 14px;
+}
+
+.facility-icon.blue { background: #e0f2fe; color: #0284c7; }
+.facility-icon.green { background: #dcfce7; color: #16a34a; }
+.facility-icon.purple { background: #f3e8ff; color: #9333ea; }
+.facility-icon.orange { background: #ffedd5; color: #ea580c; }
+
+.facility-text-card h4 {
+  font-size: 1.1rem;
+  color: #081e42;
+  margin-bottom: 8px;
+}
+
+.facility-text-card p {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.55;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.facility-pill {
+  display: inline-block;
+  align-self: flex-start;
+  background: #f1f5f9;
+  color: #475569;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* --- 2. Core Values Ribbon Banner --- */
+.values-banner {
+  background: linear-gradient(135deg, #081e42 0%, #0f172a 100%);
+  color: #ffffff;
+  padding: 36px 32px;
+  border-radius: 20px;
+  margin-bottom: 45px;
+  box-shadow: 0 10px 25px rgba(8, 30, 66, 0.12);
+}
+
+.values-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fde047;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.values-banner h3 {
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+}
+
+.values-lead {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.values-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.v-pill {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.v-pill.gold {
+  background: rgba(234, 179, 8, 0.2);
+  border-color: #fde047;
+  color: #fde047;
+}
+
+/* --- 3. Student Activity Photo Grid --- */
+.activity-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-bottom: 45px;
+}
+
+.act-photo-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+}
+
+.act-img-frame {
+  position: relative;
+  height: 180px;
+  width: 100%;
+  background: #e2e8f0;
+  overflow: hidden;
+}
+
+.act-img-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.act-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(8, 30, 66, 0.85);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.act-card-body {
+  padding: 20px;
+}
+
+.act-card-body h4 {
+  font-size: 1.1rem;
+  color: #081e42;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.act-card-body p {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.55;
+}
+
+/* --- 4. Governance Banner --- */
+.governance-banner {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 16px;
+  padding: 24px 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.gov-icon-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: #0284c7;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.gov-text h3 {
+  font-size: 1.2rem;
+  color: #081e42;
+  margin-bottom: 4px;
+}
+
+.gov-text p {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Responsive adjustment */
+@media (max-width: 600px) {
+  .governance-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ==========================================================================
+   PURE PHOTO SLIDESHOW STYLES
+   ========================================================================== */
+
+.photo-slideshow-container {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  background-color: #081e42; /* Matching PLMun Navy background for pillarboxing */
+  margin-bottom: 45px;
+}
+
+/* Individual Slide Frames */
+.slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* <--- Changed from 'cover' to 'contain' to stop cropping */
+  display: block;
+}
+
+/* Arrow Controls */
+.slideshow-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  color: #081e42;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.slideshow-arrow:hover {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+.slideshow-arrow.prev { left: 20px; }
+.slideshow-arrow.next { right: 20px; }
+
+/* Dot Indicators */
+.slideshow-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active, .dot:hover {
+  background: #fde047; /* Gold indicator */
+  transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .photo-slideshow-container {
+    height: 320px;
+  }
+}
+
+/* ==========================================================================
+   NAVIGATION MENU DIVIDERS (CSS PSEUDO-ELEMENTS)
+   ========================================================================== */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0; /* Remove gap so dividers space out evenly */
+}
+
+.nav-links a {
+  position: relative;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0 16px; /* Spacing around text */
+  transition: color 0.3s ease;
+}
+
+/* Add vertical line separator AFTER every link... */
+.nav-links a:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 14px; /* Height of divider line */
+  background-color: rgba(255, 255, 255, 0.4); /* Muted semi-transparent line */
+  pointer-events: none; /* Ensures line is not clickable */
+}
+
+/* Active & Hover Link State */
+.nav-links a:hover,
+.nav-links a.active {
+  color: #fde047; /* Gold highlight for text ONLY */
+}
+
+/* ==========================================================================
+   AI ASSISTANT SECTION - CANVA MATCH DESIGN
+   ========================================================================== */
+
+.ai-assistant-section {
+  padding: 50px 8%;
+  background-color: #f8fafc;
+  display: flex;
+  justify-content: center;
+}
+
+.ai-card-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  border-radius: 24px;
+  padding: 40px;
+  color: #ffffff;
+  box-shadow: 0 15px 35px rgba(11, 37, 69, 0.2);
+  overflow: hidden;
+
+  /* Layered Background: Dark Gradient Overlay + Centered Logo Watermark + Campus Building */
+  background: 
+    linear-gradient(135deg, rgba(8, 30, 66, 0.92) 0%, rgba(19, 64, 116, 0.88) 100%),
+    url("images/plmunlogo.png"),
+    url("images/admin.png");
+
+  background-position: 
+    center center,
+    right -30px top -40px, /* Positions the logo watermark watermark-style on top right */
+    center center;        /* Centers campus building photo */
+
+  background-repeat: 
+    no-repeat,
+    no-repeat,
+    no-repeat;
+
+  background-size: 
+    cover,
+    380px auto, /* Enlarges logo so it acts as a subtle watermark background */
+    cover;
+
+  background-blend-mode: 
+    normal,
+    overlay,    /* Softly blends the logo watermark into navy blue */
+    luminosity; /* Desaturates campus photo to match background tone */
+}
+
+.ai-title-block {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.ai-title-block h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.ai-title-block p {
+  color: #93c5fd;
+  font-size: 0.92rem;
+}
+
+/* Search Bar Wrapper */
+.ai-search-bar {
+  position: relative;
+  max-width: 540px;
+  margin: 0 auto 28px;
+  display: flex;
+  align-items: center;
+}
+
+.ai-search-bar input {
+  width: 100% !important;
+  padding-left: 45px !important;  /* Creates enough clear space after the magnifying glass */
+  padding-right: 110px !important; /* Prevents text from colliding with Clear & Send buttons */
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  font-size: 0.95rem;
+  outline: none;
+  background: #ffffff;
+  color: #0f172a;
+  box-sizing: border-box; /* Ensures padding stays inside the input container */
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  font-size: 1rem;
+  z-index: 2;
+  pointer-events: none; /* Allows user to click "through" the icon into the input */
+}
+
+.clear-icon {
+  position: absolute;
+  right: 70px;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.clear-icon:hover {
+  color: #0f172a;
+}
+
+.send-btn {
+  position: absolute;
+  right: 6px;
+  background: #0284c7;
+  color: #ffffff;
+  border: none;
+  padding: 7px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.send-btn:hover {
+  background: #0369a1;
+}
+
+/* 50/50 Split Box */
+.ai-result-box {
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.5) 0%, rgba(29, 78, 216, 0.3) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  min-height: 220px;
+}
+
+.ai-text-side {
+  color: #e2e8f0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.ai-image-side {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.ai-facility-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Tablet & Mobile Layout */
+@media (max-width: 768px) {
+  .ai-result-box {
+    grid-template-columns: 1fr;
+  }
+  .ai-image-side {
+    height: 180px;
+  }
+}
+
+/* ==========================================================================
+   HOMEPAGE STRUCTURE & SECTION BREAKERS
+   ========================================================================== */
+
+/* 1. Stats Metric Ribbon */
+.stats-ribbon {
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 30px 8%;
+  text-align: center;
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.stat-box i {
+  font-size: 1.8rem;
+  color: #0284c7;
+  margin-bottom: 8px;
+}
+
+.stat-num {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #081e42;
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* 2. Section Titles & Badges */
+.section-title-center {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.section-badge {
+  display: inline-block;
+  background: #e0f2fe;
+  color: #0284c7;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.section-title-center h2 {
+  font-size: 1.75rem;
+  color: #081e42;
+  margin-bottom: 8px;
+}
+
+.title-line {
+  width: 50px;
+  height: 3px;
+  background: #eab308;
+  margin: 0 auto 12px;
+  border-radius: 2px;
+}
+
+.section-title-center p {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+/* 3. Alternating Section Containers */
+.ai-section-wrapper {
+  background-color: #f1f5f9;
+  padding: 60px 8%;
+  display: flex;
+  justify-content: center;
+}
+
+.badge-pill {
+  display: inline-block;
+  background: rgba(234, 179, 8, 0.2);
+  color: #fde047;
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.campus-map-section {
+  background-color: #ffffff;
+  padding: 60px 8%;
+}
+
+.map-wrapper-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+}
+
+.google-map-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.gmap-header {
+  padding: 16px 24px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gmap-header h4 {
+  color: #081e42;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gmap-header span {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.office-directory-section {
+  background-color: #f8fafc;
+  padding: 60px 8%;
+}
+
+/* Canva-style accent stripes overlay */
+.ai-card-wrapper::before,
+.ai-card-wrapper::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 40px;
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.15) 3px,
+    transparent 3px,
+    transparent 8px
+  );
+  pointer-events: none;
+}
+
+.ai-card-wrapper::before {
+  top: 25px;
+  right: 30px;
+}
+
+.ai-card-wrapper::after {
+  bottom: 25px;
+  left: 30px;
+}

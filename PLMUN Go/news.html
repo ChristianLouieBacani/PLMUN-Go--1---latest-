@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PLMun News | PLMUN GO</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="news-page">
+  <div class="container">
+    <div class="wrapper">
+
+      <!-- Top Navigation -->
+      <nav class="top-nav">
+        <div class="logo">
+          <img src="images/plmunlogo.png" alt="logo" class="logo-icon">
+          <h1>PLMUN Go</h1>
+        </div>
+
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="student.html">Student</a>
+          <a href="organization.html">Organization</a>
+        </div>
+      </nav>
+
+      <!-- Sub-Navigation Hero -->
+      <header class="sub-nav-hero">
+        <div class="hero-overlay-text">
+          <h1>Explore PLMun</h1>
+          <p>Latest Updates & Campus Announcements</p>
+        </div>
+        <div class="sub-nav-bar">
+          <a href="admissions.html" class="sub-link">Admissions</a>
+          <a href="programs.html" class="sub-link">Programs</a>
+          <a href="news.html" class="sub-link active">News</a>
+          <!-- <a href="events.html" class="sub-link">Events</a> -->
+          <a href="campuslife.html" class="sub-link">Campus Life</a>
+        </div>
+      </header>
+
+      <main class="news-container">
+
+        <!-- Intro -->
+        <div class="news-intro">
+          <h2><i class="fa-solid fa-newspaper icon-gold"></i> PLMun News & Highlights</h2>
+          <p>Stay updated with the latest developments, achievements, and official announcements from the Pamantasan ng Lungsod ng Muntinlupa community.</p>
+        </div>
+
+        <!-- FEATURED TOP NEWS STORY -->
+        <article class="featured-news-card">
+          <div class="featured-tag"><i class="fa-solid fa-star"></i> FEATURED STORY</div>
+          <div class="featured-body">
+            <div class="date-badge gold">
+              <span class="day">19</span>
+              <span class="month">JUN</span>
+            </div>
+            <div class="featured-content">
+              <span class="category-pill blue">ACADEMICS</span>
+              <h3>PLMun Hosts RQAT for BS Entrepreneurship Program</h3>
+              <p>On June 19, 2025, PLMun welcomed the Regional Quality Assurance Team (RQAT) to evaluate its new Bachelor of Science in Entrepreneurship program, marking a significant step in program expansion.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- RECENT NEWS LIST -->
+        <div class="news-feed">
+
+          <article class="news-item-card">
+            <div class="date-badge">
+              <span class="day">CHRA</span>
+              <span class="month">2024</span>
+            </div>
+            <div class="news-item-content">
+              <div class="card-meta">
+                <span class="category-pill green"><i class="fa-solid fa-trophy"></i> ACHIEVEMENT</span>
+                <span class="read-time"><i class="fa-regular fa-clock"></i> Announcement</span>
+              </div>
+              <h3>PLMun Recognized by CHRA as Top-Performing School (2024)</h3>
+              <p>PLMun was acknowledged by the Certified Human Resource Associate (CHRA) as a top-performing school, reflecting its commitment to academic excellence and professional development.</p>
+            </div>
+          </article>
+
+          <article class="news-item-card">
+            <div class="date-badge">
+              <span class="day">3rd</span>
+              <span class="month">ANNUAL</span>
+            </div>
+            <div class="news-item-content">
+              <div class="card-meta">
+                <span class="category-pill purple"><i class="fa-solid fa-flask"></i> RESEARCH</span>
+                <span class="read-time"><i class="fa-regular fa-clock"></i> Ceremony</span>
+              </div>
+              <h3>Gawad SIKLAB & Research Turnover Ceremony</h3>
+              <p>During the 3rd annual Gawad SIKLAB, PLMun honored innovation and research excellence among students and faculty, highlighting the university's dedication to knowledge creation.</p>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- OFFICIAL PORTAL CALLOUT BANNER -->
+        <div class="official-portal-banner">
+          <div class="portal-text">
+            <h4><i class="fa-solid fa-bullhorn"></i> Looking for more announcements?</h4>
+            <p>For more official press releases, university advisories, and updates, visit the official portal.</p>
+          </div>
+          <a href="https://plmun.edu.ph" target="_blank" class="portal-btn">Official PLMun Website <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+
+      </main>
+
+      <!-- Footer -->
+      <footer>
+        <p>© 2025 Pamantasan ng Lungsod ng Muntinlupa | All Rights Reserved</p>
+        <p>Contact us at <a href="mailto:info@plmun.edu.ph">info@plmun.edu.ph</a></p>
+      </footer>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+</html>

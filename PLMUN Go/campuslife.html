@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Life | PLMUN GO</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="campuslife-page">
+  <div class="container">
+    <div class="wrapper">
+
+      <!-- Top Navigation -->
+      <nav class="top-nav">
+        <div class="logo">
+          <img src="images/plmunlogo.png" alt="logo" class="logo-icon">
+          <h1>PLMUN Go</h1>
+        </div>
+
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="student.html">Student</a>
+          <a href="organization.html">Organization</a>
+        </div>
+      </nav>
+
+      <!-- Sub-Navigation Hero -->
+      <header class="sub-nav-hero">
+        <div class="hero-overlay-text">
+          <h1>Explore PLMun</h1>
+          <p>Discover Life, Facilities & Culture on Campus</p>
+        </div>
+        <div class="sub-nav-bar">
+          <a href="admissions.html" class="sub-link">Admissions</a>
+          <a href="programs.html" class="sub-link">Programs</a>
+          <a href="news.html" class="sub-link">News</a>
+          <!-- <a href="events.html" class="sub-link">Events</a> -->
+          <a href="campuslife.html" class="sub-link active">Campus Life</a>
+        </div>
+      </header>
+
+      <main class="cl-container">
+
+        <!-- Page Introduction -->
+        <div class="cl-intro">
+          <h2><i class="fa-solid fa-compass icon-gold"></i> Campus Life at PLMun</h2>
+          <p>Life at Pamantasan ng Lungsod ng Muntinlupa is more than academics. Our campus is a lively place where students learn, create, connect, and grow together.</p>
+        </div>
+
+        <!-- 1. FACILITIES & INFRASTRUCTURE (2x2 GRID) -->
+        <section class="cl-section">
+          <div class="cl-section-header">
+            <h3><i class="fa-solid fa-building-user icon-blue"></i> Facilities & Infrastructure</h3>
+            <p>PLMun's campus includes multiple academic buildings, labs, and community spaces.</p>
+          </div>
+
+          <div class="facility-text-grid">
+            <div class="facility-text-card">
+              <div class="facility-icon blue"><i class="fa-solid fa-flask"></i></div>
+              <h4>Bonifacio Building</h4>
+              <p>Houses state-of-the-art computer labs, technical computing facilities, and the University Admission Center.</p>
+              <span class="facility-pill">Academic Hub</span>
+            </div>
+
+            <div class="facility-text-card">
+              <div class="facility-icon green"><i class="fa-solid fa-user-tie"></i></div>
+              <h4>Del Pilar Building</h4>
+              <p>Home to the executive offices of the administration, college deans, and administrative technical rooms.</p>
+              <span class="facility-pill">Administration</span>
+            </div>
+
+            <div class="facility-text-card">
+              <div class="facility-icon purple"><i class="fa-solid fa-book-open-reader"></i></div>
+              <h4>Mabini Building</h4>
+              <p>Houses the main University Library, the Innovation Hub, and student cultural spaces.</p>
+              <span class="facility-pill">Library & Culture</span>
+            </div>
+
+            <div class="facility-text-card">
+              <div class="facility-icon orange"><i class="fa-solid fa-hotel"></i></div>
+              <h4>New Juan N. Luna Building</h4>
+              <p>Dedicated to Tourism & Hospitality Management, featuring specialized simulation labs and practical training rooms.</p>
+              <span class="facility-pill">Hospitality & Tourism</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. CORE VALUES RIBBON -->
+        <section class="values-banner">
+          <div class="values-header">
+            <i class="fa-solid fa-shield-heart"></i>
+            <span>DIVERSITY & CORE VALUES</span>
+          </div>
+          <h3>Grounded in Excellence and Integrity</h3>
+          <p class="values-lead">PLMun promotes a campus culture anchored in our fundamental pillars:</p>
+          <div class="values-pills">
+            <span class="v-pill"><i class="fa-solid fa-scale-balanced"></i> Sense of Righteousness</span>
+            <span class="v-pill"><i class="fa-solid fa-award"></i> Pride</span>
+            <span class="v-pill"><i class="fa-solid fa-bolt"></i> Urgency</span>
+            <span class="v-pill"><i class="fa-solid fa-hand-holding-hand"></i> Ownership</span>
+            <span class="v-pill gold"><i class="fa-solid fa-crown"></i> Culture of Excellence</span>
+          </div>
+        </section>
+
+        <!-- 3. STUDENT ACTIVITIES & CULTURE (CLEAN PHOTO SLIDESHOW) -->
+        <section class="cl-section">
+          <div class="cl-section-header">
+            <h3><i class="fa-solid fa-camera icon-gold"></i> Campus Life Gallery</h3>
+            <p>Visual highlights of student events, performances, and campus culture.</p>
+          </div>
+
+          <!-- Slideshow Frame -->
+          <div class="photo-slideshow-container">
+            
+            <!-- Prev / Next Controls -->
+            <button class="slideshow-arrow prev" onclick="changeSlide(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="slideshow-arrow next" onclick="changeSlide(1)"><i class="fa-solid fa-chevron-right"></i></button>
+
+            <!-- Slides (Pure Visuals) -->
+            <div class="slide active">
+              <img src="images/campus-5.jpg" alt="Campus Life 1">
+              
+            </div>
+
+            <div class="slide">
+              <img src="images/campus-6.jpg" alt="Campus Life 2">
+              
+            </div>
+
+            <div class="slide">
+              <img src="images/campus-7.jpg" alt="Campus Life 3">
+              
+            </div>
+
+            <div class="slide">
+              <img src="images/campus-8.jpeg" alt="Campus Life 4">
+          
+            </div>
+
+            <div class="slide">
+              <img src="images/campus-9.jpeg" alt="Campus Life 5">
+              
+            </div>
+
+            <!-- Dots Indicator Navigation -->
+            <div class="slideshow-dots">
+              <span class="dot active" onclick="currentSlide(0)"></span>
+              <span class="dot" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
+              <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 4. GOVERNANCE BANNER -->
+        <section class="governance-banner">
+          <div class="gov-icon-box"><i class="fa-solid fa-landmark-flag"></i></div>
+          <div class="gov-text">
+            <h3>Student Governance</h3>
+            <p>The student body is proudly represented by the <strong>University Student Council (USC)</strong>, which actively engages with university leadership to ensure students' voices are heard and their needs are met effectively.</p>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- Global Footer -->
+      <footer>
+        <p>© 2025 Pamantasan ng Lungsod ng Muntinlupa | All Rights Reserved</p>
+        <p>Contact us at <a href="mailto:info@plmun.edu.ph">info@plmun.edu.ph</a></p>
+      </footer>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mobile Nav Toggle
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+
+      if (navToggle) {
+        navToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+        });
+      }
+
+      // Slideshow Functionality
+      let slideIndex = 0;
+      const slides = document.querySelectorAll('.slide');
+      const dots = document.querySelectorAll('.dot');
+      const prevBtn = document.querySelector('.slideshow-arrow.prev');
+      const nextBtn = document.querySelector('.slideshow-arrow.next');
+
+      function showSlide(index) {
+        if (slides.length === 0) return;
+
+        // Wrap around limits
+        if (index >= slides.length) slideIndex = 0;
+        else if (index < 0) slideIndex = slides.length - 1;
+        else slideIndex = index;
+
+        // Hide all slides & deactivate dots
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+
+        // Display current slide & dot
+        slides[slideIndex].classList.add('active');
+        if (dots[slideIndex]) {
+          dots[slideIndex].classList.add('active');
+        }
+      }
+
+      // Attach Event Listeners to Buttons
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          showSlide(slideIndex - 1);
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          showSlide(slideIndex + 1);
+        });
+      }
+
+      // Attach Event Listeners to Dots
+      dots.forEach((dot, idx) => {
+        dot.addEventListener('click', () => {
+          showSlide(idx);
+        });
+      });
+
+      // Initialize First Slide
+      showSlide(0);
+    });
+  </script>
+</body>
+</html>

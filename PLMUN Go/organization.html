@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organization | PLMUN GO</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="org-page">
+
+  <div class="container">
+    <div class="wrapper">
+
+      <!-- 1. GLOBAL TOP NAVIGATION (Same position as all other pages) -->
+      <nav class="top-nav">
+        <div class="logo">
+          <img src="images/plmunlogo.png" alt="logo" class="logo-icon">
+          <h1>PLMUN Go</h1>
+        </div>
+
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="student.html">Student</a>
+          <a href="organization.html" class="active">Organization</a>
+        </div>
+      </nav>
+
+      <!-- 2. SPLIT SECTION (Between Header & Footer) -->
+      <main class="org-split-container">
+        
+        <!-- LEFT SIDE: Fixed Image of Research Building -->
+        <div class="org-image-pane">
+          <div class="image-caption-badge">
+            <i class="fa-solid fa-building-columns"></i>
+            <span>PLMun Research Building</span>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDE: Text Content with Custom Designs -->
+        <div class="org-text-pane">
+          <div class="org-header-block">
+            <h1><i class="fa-solid fa-sitemap icon-gold"></i> Student Organizations</h1>
+            <p>PLMun has a vibrant community of student organizations that span academic, cultural, social, and recreational interests. These groups foster leadership, collaboration, and personal growth.</p>
+          </div>
+
+          <div class="org-card">
+            <h2><i class="fa-solid fa-layer-group icon-blue"></i> Types of Organizations</h2>
+            <ul class="styled-org-list">
+              <li><strong>Academic Clubs:</strong> Organizations related to majors (e.g., computer science club, criminology group)</li>
+              <li><strong>Cultural & Arts Groups:</strong> For students passionate about dance, theater, music, and more</li>
+              <li><strong>Social & Service Organizations:</strong> Student-led community outreach, volunteering, and advocacy</li>
+              <li><strong>Sports & Wellness Clubs:</strong> Promote physical activity, team spirit, and healthy lifestyles</li>
+              <li><strong>Student Government:</strong> The University Student Council represents and advocates for the student body</li>
+            </ul>
+          </div>
+
+          <div class="org-card">
+            <h2><i class="fa-solid fa-handshake-angle icon-blue"></i> Getting Involved</h2>
+            <p>Joining an organization at PLMun is a great way to meet like-minded peers, develop leadership skills, and make a meaningful impact on campus. Whether through cultural performances, community outreach, or academic events, student orgs offer something for everyone.</p>
+          </div>
+
+          <div class="org-card">
+            <h2><i class="fa-solid fa-chess-king icon-blue"></i> Leadership & Governance</h2>
+            <p>Each organization is typically led by elected student officers and overseen by the Prefect for Student Organizations under the Office of Student Affairs. The Student Council (USC) serves as the primary student governance body, coordinating with university leadership to address student issues and initiatives.</p>
+          </div>
+        </div>
+
+      </main>
+
+      <!-- 3. GLOBAL FOOTER (Same position as all other pages) -->
+      <footer>
+        <p>© 2025 Pamantasan ng Lungsod ng Muntinlupa | All Rights Reserved</p>
+        <p>Contact us at <a href="mailto:info@plmun.edu.ph">info@plmun.edu.ph</a></p>
+      </footer>
+
+    </div> <!-- end .wrapper -->
+  </div> <!-- end .container -->
+
+  <script src="script.js"></script>
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+</html>

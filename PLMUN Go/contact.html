@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - My Website</title>
-  <link rel="stylesheet" href="style.css"> 
+  <title>Contact | PLMUN GO</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body class="contact">
@@ -14,7 +16,7 @@
       <!-- Top Navigation (same as other pages) -->
       <nav class="top-nav">
         <div class="logo">
-          <img src="images/plmunlogo.png" alt="logo" class="logo-icon">
+          <img src="images/plmunlogo.png" alt="PLMun Logo" class="logo-icon">
           <h1>PLMUN Go</h1>
         </div>
 
@@ -34,48 +36,91 @@
         </div>
       </nav>
 
-            <!-- Main Content -->
-      <div class="content">
-        <h1>Contact Us</h1>
-        <p>Got a question? Send a message below!</p>
+      <main class="contact-page">
 
-        <form action="https://formspree.io/f/mwpygpbd" method="POST">
-          <label>Name:</label>
-          <input type="text" name="name" placeholder="Your name" required>
+        <!-- 1. Hero Banner -->
+        <section class="contact-hero">
+          <span class="contact-tag"><i class="fa-solid fa-envelope-open-text"></i> GET IN TOUCH</span>
+          <h1>Contact Us</h1>
+          <p>Got a question about PLMun Go or the campus? Send us a message and we'll get back to you.</p>
+        </section>
 
-          <label>Email:</label>
-          <input type="email" name="email" placeholder="Your email" required>
+        <!-- 2. Info Cards + Form -->
+        <section class="contact-grid">
 
-          <label>Message:</label>
-          <textarea rows="4" name="message" placeholder="Type your message..." required></textarea>
+          <!-- Left: info cards -->
+          <div class="contact-info">
+            <div class="info-card">
+              <div class="info-icon blue"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <h3>Email Us</h3>
+                <p><a href="mailto:info@plmun.edu.ph">info@plmun.edu.ph</a></p>
+              </div>
+            </div>
 
-          <button type="submit">Send</button>
-        </form>
+            <div class="info-card">
+              <div class="info-icon green"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <h3>Visit Us</h3>
+                <p>Pamantasan ng Lungsod ng Muntinlupa<br>NBP Reservation, Poblacion, Muntinlupa</p>
+              </div>
+            </div>
 
-        <p id="form-status" style="margin-top:15px; color:green; display:none;">
-          Message sent successfully! 🎉
-        </p>
-      </div>
+            <div class="info-card">
+              <div class="info-icon purple"><i class="fa-solid fa-robot"></i></div>
+              <div>
+                <h3>Need a Quick Answer?</h3>
+                <p>Ask our campus assistant on the <a href="index.html">home page</a> to find offices and rooms.</p>
+              </div>
+            </div>
+          </div>
 
-    </div>
-  </div>
+          <!-- Right: form -->
+          <div class="contact-form-card">
+            <div class="form-card-header">
+              <h2><i class="fa-solid fa-paper-plane icon-gold"></i> Send a Message</h2>
+              <p>Fill out the form below and we'll reply by email.</p>
+            </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Pamantasan ng Lungsod ng Muntinlupa | All Rights Reserved</p>
-    <p>Contact us at <a href="mailto:info@plmun.edu.ph">info@plmun.edu.ph</a></p>
-  </footer>
+            <form id="contact-form" action="https://formspree.io/f/mwpygpbd" method="POST">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+              </div>
 
-  <!-- JavaScript -->
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email" required>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" rows="5" name="message" placeholder="Type your message..." required></textarea>
+              </div>
+
+              <button type="submit" class="contact-submit">
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+              </button>
+            </form>
+
+            <p id="form-status" class="form-status">
+              Message sent successfully! 🎉
+            </p>
+          </div>
+
+        </section>
+
+      </main>
+
+      <!-- Footer -->
+      <footer>
+        <p>© 2025 Pamantasan ng Lungsod ng Muntinlupa | All Rights Reserved</p>
+        <p>Contact us at <a href="mailto:info@plmun.edu.ph">info@plmun.edu.ph</a></p>
+      </footer>
+
+    </div> <!-- end .wrapper -->
+  </div> <!-- end .container -->
+
   <script src="script.js"></script>
-  <script>
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
-
 </body>
 </html>

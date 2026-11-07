@@ -41,7 +41,7 @@
             <span class="student-tag"><i class="fa-solid fa-sparkles"></i> CAMPUS LIFE HUB</span>
             <h1>Student Life at PLMun</h1>
             <p>Welcome to the heart of PLMun — where learning meets passion, friendships, and unforgettable experiences! Whether you’re hustling for grades, joining org activities, or hanging out in Mabini, PLMun student life is always alive.</p>
-            
+
             <div class="quick-highlights">
               <div class="pill-badge"><i class="fa-solid fa-graduation-cap"></i> Academic Growth</div>
               <div class="pill-badge"><i class="fa-solid fa-hand-holding-dollar"></i> Financial Grants</div>
@@ -115,43 +115,39 @@
           </div>
         </section>
 
-      <!-- 4. Campus Gallery / Life in Pictures -->
-<section class="student-section">
-  <div class="section-title">
-    <h2><i class="fa-solid fa-camera icon-gold"></i> Life at PLMun in Pictures</h2>
-    <p>A glimpse into our campus culture, events, and student moments.</p>
-  </div>
+        <!-- 4. Campus Gallery / Life in Pictures (AUTO SLIDESHOW) -->
+        <section class="student-section">
+          <div class="section-title">
+            <h2><i class="fa-solid fa-camera icon-gold"></i> Life at PLMun in Pictures</h2>
+            <p>A glimpse into our campus culture, events, and student moments.</p>
+          </div>
 
-  <div class="equal-grid">
-    <div class="equal-item">
-      <img src="images/campus-1.jpeg" alt="PLMun Event">
-      <div class="equal-overlay">
-        <span>Cultural Events</span>
-      </div>
-    </div>
+          <div class="auto-slideshow">
+            <div class="auto-slide">
+              <img src="images/campus-1.jpeg" alt="PLMun Event">
+              <div class="auto-caption"><span>Cultural Events</span></div>
+            </div>
 
-    <div class="equal-item">
-      <img src="images/campus-3.jpeg" alt="Campus Life">
-      <div class="equal-overlay">
-        <span>Campus Life</span>
-      </div>
-    </div>
+            <div class="auto-slide">
+              <img src="images/campus-3.jpeg" alt="Campus Life">
+              <div class="auto-caption"><span>Campus Life</span></div>
+            </div>
 
-    <div class="equal-item">
-      <img src="images/gym.jpg" alt="University Activities">
-      <div class="equal-overlay">
-        <span>University Pride</span>
-      </div>
-    </div>
+            <div class="auto-slide">
+              <img src="images/gym.jpg" alt="University Activities">
+              <div class="auto-caption"><span>University Pride</span></div>
+            </div>
 
-    <div class="equal-item">
-      <img src="images/campus-4.jpg" alt="Student Assembly">
-      <div class="equal-overlay">
-        <span>Student Assembly</span>
-      </div>
-    </div>
-  </div>
-</section>
+            <div class="auto-slide">
+              <img src="images/campus-4.jpg" alt="Student Assembly">
+              <div class="auto-caption"><span>Student Assembly</span></div>
+            </div>
+
+            <div class="auto-dots">
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+        </section>
 
         <!-- 5. Campus Experience Callout -->
         <section class="campus-experience-banner">
@@ -173,13 +169,5 @@
   </div> <!-- end .container -->
 
   <script src="script.js"></script>
-  <script>
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
 </body>
 </html>

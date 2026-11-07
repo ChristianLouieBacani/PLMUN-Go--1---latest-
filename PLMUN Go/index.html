@@ -36,15 +36,21 @@
       </nav>
 
       <!-- Hero Section -->
-      <section class="hero">
-        <div class="hero-text">
+      <section class="home-hero">
+        <div class="home-hero-content">
+          <span class="home-hero-tag"><i class="fa-solid fa-location-dot"></i> MUNTINLUPA CITY</span>
           <h1>Explore PLMUN</h1>
           <p>Learn, Connect, and Grow at Pamantasan ng Lungsod ng Muntinlupa</p>
+
+          <div class="home-hero-actions">
+            <a href="#ask" class="hero-btn primary"><i class="fa-solid fa-robot"></i> Ask PLMun Go</a>
+            <a href="#campus-map" class="hero-btn ghost"><i class="fa-solid fa-map-location-dot"></i> Campus Map</a>
+          </div>
         </div>
       </section>
 
       <!-- Lower Navigation Bar -->
-      <nav class="lower-nav">
+      <nav class="home-link-bar">
         <a href="admissions.html">Admissions</a>
         <a href="programs.html">Programs</a>
         <a href="news.html">News</a>
@@ -76,7 +82,7 @@
       </section>
 
       <!-- 2. AI ASSISTANT SECTION -->
-      <section class="ai-section-wrapper">
+      <section class="ai-section-wrapper" id="ask">
         <div class="ai-card-wrapper">
           <div class="ai-title-block">
             <span class="badge-pill"><i class="fa-solid fa-sparkles"></i> AI CAMPUS ASSISTANT</span>
@@ -106,7 +112,7 @@
       </section>
 
       <!-- 3. CAMPUS MAP SECTION -->
-      <section class="campus-map-section">
+      <section class="campus-map-section" id="campus-map">
         <div class="section-title-center">
           <span class="section-badge"><i class="fa-solid fa-map-location-dot"></i> INTERACTIVE MAP</span>
           <h2>University Campus Layout</h2>
@@ -158,6 +164,14 @@
           <span class="section-badge"><i class="fa-solid fa-sitemap"></i> DIRECTORY</span>
           <h2 class="directory-title">University Office Directory</h2>
           <div class="title-line"></div>
+          <p>Search for an office or room, or open a building to browse its floors.</p>
+        </div>
+
+        <!-- Directory Search -->
+        <div class="directory-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="directory-search" placeholder="Search offices or rooms (e.g. clinic, registrar, library)" autocomplete="off">
+          <button type="button" id="directory-clear" class="directory-clear" title="Clear search" hidden><i class="fa-solid fa-xmark"></i></button>
         </div>
 
         <div class="office-directory-grid">
@@ -341,17 +355,18 @@
               <details>
                 <summary>Third Floor</summary>
                 <ul>
-                  <li>Heroes Hall</li>
-                  <ul>
-                    <li>Melchora Aquino Hall</li>
-                    <li>Gabriela Silang Hall</li>
-                    <li>Josefa Llanes Escoda Hall</li>
-                    <li>Sultan Kudarat Hall</li>
-                    <li>Gregorio Del Pilar Hall</li>
-                    <li>GOMBURZA Hall</li>
-                    <li>Antonio Luna Hall</li>
-                    <li>Graciano Lopez-Jaena Hall</li>
-                  </ul>
+                  <li>Heroes Hall
+                    <ul>
+                      <li>Melchora Aquino Hall</li>
+                      <li>Gabriela Silang Hall</li>
+                      <li>Josefa Llanes Escoda Hall</li>
+                      <li>Sultan Kudarat Hall</li>
+                      <li>Gregorio Del Pilar Hall</li>
+                      <li>GOMBURZA Hall</li>
+                      <li>Antonio Luna Hall</li>
+                      <li>Graciano Lopez-Jaena Hall</li>
+                    </ul>
+                  </li>
                 </ul>
               </details>
               <details>
@@ -364,6 +379,10 @@
           </div>
 
         </div>
+
+        <p id="directory-empty" class="directory-empty" hidden>
+          No offices found. Try another keyword, like "clinic", "registrar" or "library".
+        </p>
       </section>
 
       <!-- Footer -->
@@ -549,28 +568,6 @@
           });
         });
       }
-
-      // ==========================================
-      // 3. OFFICE DIRECTORY ACCORDION FEATURE
-      // ==========================================
-      const buildingCards = document.querySelectorAll('.building-card');
-
-      buildingCards.forEach(card => {
-        const header = card.querySelector('.building-header');
-        if (!header) return;
-
-        header.addEventListener('click', () => {
-          const isAlreadyOpen = card.classList.contains('active');
-
-          buildingCards.forEach(otherCard => {
-            otherCard.classList.remove('active');
-          });
-
-          if (!isAlreadyOpen) {
-            card.classList.add('active');
-          }
-        });
-      });
 
     });
   </script>

@@ -54,15 +54,16 @@ main {
         rgba(47, 75, 114, 0.15) 100%
     );
 
-       .top-nav.scrolled .nav-toggle span {
-     background: #081e42;
-   }
-
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
 
     border-bottom: 1px solid rgba(255, 255, 255, 0.25);
     box-shadow: 0 4px 18px rgba(8, 30, 66, 0.08);
+}
+
+/* HAMBURGER BARS WHEN SCROLLED (dark, so they stay visible on the light bar) */
+.top-nav.scrolled .nav-toggle span {
+  background: #081e42;
 }
 
 /* LOGO TEXT */
@@ -3712,5 +3713,119 @@ html {
     max-width: none !important;
     margin: 0 !important;
     box-sizing: border-box !important;
+  }
+}
+
+/* ==========================================================================
+   PHONE FIXES
+   Kept at the very end of the file so they win over the older rules above:
+   1. hamburger dropdown looks the same on every page
+   2. home page stats sit in one row under the Admissions/Programs bar
+   3. About and Organization pages fit a phone screen properly
+   ========================================================================== */
+
+/* About page: the about-page class sits on <body> AND <main>, so the page
+   padding was applied twice (inset footer, extra gap). Only <main> needs it. */
+body.about-page {
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+
+  /* --- 1. Hamburger dropdown: same navy panel on every page, scrolled or not --- */
+  .top-nav .nav-links {
+    top: 100%;
+    background-color: #081e42;
+    align-items: stretch;
+    text-align: center;
+    gap: 0;
+    padding: 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .top-nav .nav-links a,
+  .top-nav.scrolled .nav-links a {
+    margin: 0;
+    padding: 11px 20px;
+    font-size: 15px;
+    color: #ffffff;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .top-nav .nav-links a:hover,
+  .top-nav .nav-links a.active,
+  .top-nav.scrolled .nav-links a.active {
+    color: #fde047;
+  }
+
+  /* the small vertical divider lines belong to the desktop bar only */
+  .top-nav .nav-links a::after {
+    display: none;
+  }
+
+  /* --- 2. Home page: the 4 stats stay in a single row --- */
+  .stats-ribbon {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    padding: 20px 8px;
+  }
+
+  .stat-box {
+    padding: 4px 2px;
+  }
+
+  .stat-box i {
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+  }
+
+  .stat-num {
+    font-size: clamp(0.85rem, 4vw, 1.1rem);
+  }
+
+  .stat-label {
+    font-size: clamp(0.58rem, 2.6vw, 0.7rem);
+    line-height: 1.25;
+  }
+
+  /* --- 3a. About page --- */
+  .about-hero {
+    padding: 28px 22px;
+    gap: 24px;
+  }
+
+  .hero-text h2 {
+    font-size: 1.7rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .mv-card {
+    padding: 28px 24px;
+  }
+}
+
+/* --- 3b. Organization page: the photo had a 580px minimum height on phones --- */
+@media (max-width: 992px) {
+  .org-image-pane {
+    height: 320px;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .org-image-pane {
+    height: 240px;
+    padding: 16px;
+  }
+
+  .org-header-block h1 {
+    font-size: 1.8rem;
+  }
+
+  .org-card {
+    padding: 22px 20px;
   }
 }

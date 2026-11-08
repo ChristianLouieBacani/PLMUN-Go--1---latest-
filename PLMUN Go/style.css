@@ -3863,3 +3863,134 @@ body.about-page {
   }
 }
 
+
+
+/* ==========================================================================
+   ADMISSIONS / PROGRAMS / NEWS / CAMPUS LIFE: header and tab bar styled like
+   the home page.
+   Photos are NOT touched here: the banner photo and its dark overlay stay
+   exactly as set in .sub-nav-hero further up.
+   ========================================================================== */
+
+/* Header text: same size and colour as the home hero */
+.hero-overlay-text h1 {
+  font-size: 3.2rem;
+  margin-bottom: 10px;
+}
+
+.hero-overlay-text p {
+  color: #ffffff;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-top: 0;
+}
+
+/* Tab bar: same as the home link bar (navy, white centred links, gold on hover) */
+.sub-nav-bar {
+  background-color: #081e42;
+  backdrop-filter: none;
+  border-top: none;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 15px 0;
+}
+
+.sub-link {
+  color: #ffffff;
+  padding: 0 0 4px;
+  font-size: 18px;
+  font-weight: 500;
+  background: none;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.sub-link:hover {
+  color: #ffd700;
+  background: none;
+  border-bottom-color: transparent;
+}
+
+/* the page you are on: gold text only, no underline (same as the home bar) */
+.sub-link.active,
+.sub-link.active:hover {
+  color: #ffd700;
+  background: none;
+  border-bottom-color: transparent;
+}
+
+/* Intro blocks: same white card and heading size on all four pages */
+.news-intro,
+.cl-intro {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.adm-intro h2,
+.prog-intro h2,
+.news-intro h2,
+.cl-intro h2 {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.news-intro p,
+.cl-intro p {
+  margin-top: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+
+  /* Hamburger: bigger tap area (the negative margin keeps the bars where they were) */
+  .nav-toggle {
+    padding: 12px;
+    margin: -12px;
+    touch-action: manipulation;
+  }
+
+  /* same sizes as the home hero on phones */
+  .hero-overlay-text h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero-overlay-text p {
+    font-size: 1rem;
+  }
+
+  /* same as the home link bar on phones */
+  .sub-nav-bar {
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 15px;
+  }
+
+  .sub-link {
+    flex: 0 0 auto;
+    font-size: 14px;
+    padding: 0 0 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* room for a two-line subtitle, so the tab bar sits in the same place on every page */
+  .hero-overlay-text p {
+    min-height: 3.2em;
+  }
+}
+
+@media (max-width: 360px) {
+  .sub-nav-bar {
+    gap: 10px;
+    padding: 10px 8px;
+  }
+
+  .sub-link {
+    font-size: 13px;
+  }
+}

@@ -81,7 +81,7 @@ navToggle.addEventListener('click', () => {
 
         buildingCards.forEach((c) => setCardOpen(c, false));
 
-                if (!isOpen) {
+        if (!isOpen) {
           setCardOpen(card, true);
         }
       });

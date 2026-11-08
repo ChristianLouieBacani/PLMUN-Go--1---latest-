@@ -3646,3 +3646,71 @@ html {
   border-radius: 10px;
   background: #fff;
 }
+
+/* --- Mobile Navigation Dropdown Fix --- */
+@media screen and (max-width: 768px) {
+  /* Hide standard links by default on mobile */
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff; /* Or your nav background color */
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    
+    /* Hidden state */
+    display: none; 
+  }
+
+  /* When JavaScript adds the 'active' class, show the menu */
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Make sure hamburger toggle is clickable */
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+}
+
+/* On desktop screens, make sure links show normally */
+@media screen and (min-width: 769px) {
+  .nav-links {
+    display: flex !important;
+  }
+  .nav-toggle {
+    display: none;
+  }
+}
+
+/* --- OVERRIDE FOR CORE VALUES 5-CARD ROW --- */
+@media screen and (min-width: 769px) {
+  .values-section .values-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    align-items: stretch !important;
+    gap: 15px !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .values-section .values-grid .value-card {
+    flex: 1 1 0px !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+}

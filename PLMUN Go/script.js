@@ -15,13 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
   // MOBILE NAV TOGGLE (all pages)
   // ==========================================
-  const navToggle = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  if (navToggle && navLinks) {
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  }
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('active'); /* Triggers the X animation */
+    navLinks.classList.toggle('active');  /* Opens the menu */
+});
 
   // ==========================================
   // OFFICE DIRECTORY (accordion + search)
@@ -81,10 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         buildingCards.forEach((c) => setCardOpen(c, false));
 
-        if (!isOpen) {
+                if (!isOpen) {
           setCardOpen(card, true);
-          const firstFloor = card.querySelector('.building-content details');
-          if (firstFloor) firstFloor.open = true;
         }
       });
     });
@@ -254,4 +252,92 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize
   startSlider();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const mapPins = document.querySelectorAll('.map-pin');
+    const mapPopup = document.getElementById('mapPopup');
+    const popupImg = document.getElementById('popupImg');
+    const popupTitle = document.getElementById('popupTitle');
+    const popupDesc = document.getElementById('popupDesc');
+
+    if (mapPins.length > 0 && mapPopup) {
+        
+        // Unified function to populate and position the popup
+        // Unified function to populate and position the popup
+        function openPopup(pin) {
+            const title = pin.getAttribute('data-title');
+            const image = pin.getAttribute('data-image');
+            const desc = pin.getAttribute('data-desc') || '';
+
+            if (popupTitle) popupTitle.textContent = title;
+            if (popupImg) popupImg.src = image;
+            if (popupDesc) popupDesc.textContent = desc;
+
+            // Set the baseline vertical position
+            mapPopup.style.top = (pin.offsetTop - 120) + 'px';
+
+            // Check if this is a building that should open on the left
+            if (title === "Del Pilar Building" || title === "Rizal Building") {
+                mapPopup.classList.add('popup-left');
+                // Anchor exact left coordinate to the pin so CSS can pull it backward
+                mapPopup.style.left = pin.offsetLeft + 'px'; 
+            } else {
+                mapPopup.classList.remove('popup-left');
+                // Standard right-side positioning with a 20px gap
+                mapPopup.style.left = (pin.offsetLeft + 20) + 'px';
+            }
+
+            mapPopup.style.display = 'block';
+        }
+
+        mapPins.forEach(pin => {
+            // -- PC Hover Behavior --
+            pin.addEventListener('mouseenter', () => {
+                openPopup(pin);
+            });
+
+            pin.addEventListener('mouseleave', () => {
+                mapPopup.style.display = 'none';
+            });
+
+            // -- Mobile Tap Behavior --
+            pin.addEventListener('click', (event) => {
+                event.stopPropagation(); // Stops the tap from bubbling up to the document
+                
+                // If this pin's popup is already showing, ignore the click (prevent toggle conflict)
+                if (mapPopup.style.display === 'block' && popupTitle.textContent === pin.getAttribute('data-title')) {
+                    return; 
+                }
+                
+                openPopup(pin);
+            });
+        });
+
+        // Close the popup if a mobile user taps anywhere else on the screen
+        document.addEventListener('click', () => {
+            if (mapPopup.style.display === 'block') {
+                mapPopup.style.display = 'none';
+            }
+        });
+    }
+
+    // ==========================================
+  // ADMISSIONS FAQ ACCORDION (Auto-Close)
+  // ==========================================
+  const accordions = document.querySelectorAll('.accordion-item');
+
+  accordions.forEach(accordion => {
+    // The 'toggle' event fires natively whenever a <details> tag opens or closes
+    accordion.addEventListener('toggle', function() {
+      if (this.open) {
+        // If this one just opened, loop through the rest and close them
+        accordions.forEach(otherAccordion => {
+          if (otherAccordion !== this && otherAccordion.open) {
+            otherAccordion.open = false;
+          }
+        });
+      }
+    });
+  });
 });

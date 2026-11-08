@@ -3716,16 +3716,9 @@ html {
   }
 }
 
-/* ==========================================================================
-   PHONE FIXES
-   Kept at the very end of the file so they win over the older rules above:
-   1. hamburger dropdown looks the same on every page
-   2. home page stats sit in one row under the Admissions/Programs bar
-   3. About and Organization pages fit a phone screen properly
-   ========================================================================== */
+/* === PHONE FIXES === */
 
-/* About page: the about-page class sits on <body> AND <main>, so the page
-   padding was applied twice (inset footer, extra gap). Only <main> needs it. */
+
 body.about-page {
   padding: 0;
 }

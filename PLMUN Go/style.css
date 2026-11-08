@@ -3565,3 +3565,84 @@ html {
     display: none;
   }
 }
+
+/* Single Frame Slider Container, campus life photos */
+.single-slider-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.single-slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 750px;
+  height: 450px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  border: 3px solid #fff;
+  background-color: #000;
+}
+
+/* Base style for all slides: hidden to the right */
+.single-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(100%);
+  transition: transform 0.6s ease-in-out;
+  will-change: transform;
+}
+
+.single-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Active slide stays centered */
+.single-slide.active {
+  transform: translateX(0);
+  z-index: 2;
+}
+
+/* Previous slide slides out to the left */
+.single-slide.prev {
+  transform: translateX(-100%);
+  z-index: 1;
+}
+
+/* Dots Indicator Overlay */
+.slider-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.slider-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.slider-dots .dot.active {
+  width: 24px;
+  border-radius: 10px;
+  background: #fff;
+}

@@ -112,57 +112,30 @@
           </div>
         </section>
 
-        <!-- 3. STUDENT ACTIVITIES & CULTURE (CLEAN PHOTO SLIDESHOW) -->
+        <!-- 3. STUDENT ACTIVITIES & CULTURE (AUTO-PLAY BLUR SLIDER) -->
         <section class="cl-section">
           <div class="cl-section-header">
             <h3><i class="fa-solid fa-camera icon-gold"></i> Campus Life Gallery</h3>
-            <p>Visual highlights of student events, performances, and campus culture.</p>
+            <p>Visual highlights of student events. Automatically sliding through campus moments.</p>
           </div>
 
-          <!-- Slideshow Frame -->
-          <div class="photo-slideshow-container">
-            
-            <!-- Prev / Next Controls -->
-            <button class="slideshow-arrow prev" onclick="changeSlide(-1)"><i class="fa-solid fa-chevron-left"></i></button>
-            <button class="slideshow-arrow next" onclick="changeSlide(1)"><i class="fa-solid fa-chevron-right"></i></button>
+        <div class="single-slider-container" id="singleSlider">
+  
+        <div class="single-slide active"><img src="images/campus-5.jpg" alt="Campus Life 1"></div>
+        <div class="single-slide"><img src="images/campus-6.jpg" alt="Campus Life 2"></div>
+        <div class="single-slide"><img src="images/campus-7.jpg" alt="Campus Life 3"></div>
+        <div class="single-slide"><img src="images/campus-8.jpeg" alt="Campus Life 4"></div>
+        <div class="single-slide"><img src="images/campus-9.jpeg" alt="Campus Life 5"></div>
 
-            <!-- Slides (Pure Visuals) -->
-            <div class="slide active">
-              <img src="images/campus-5.jpg" alt="Campus Life 1">
-              
-            </div>
-
-            <div class="slide">
-              <img src="images/campus-6.jpg" alt="Campus Life 2">
-              
-            </div>
-
-            <div class="slide">
-              <img src="images/campus-7.jpg" alt="Campus Life 3">
-              
-            </div>
-
-            <div class="slide">
-              <img src="images/campus-8.jpeg" alt="Campus Life 4">
-          
-            </div>
-
-            <div class="slide">
-              <img src="images/campus-9.jpeg" alt="Campus Life 5">
-              
-            </div>
-
-            <!-- Dots Indicator Navigation -->
-            <div class="slideshow-dots">
-              <span class="dot active" onclick="currentSlide(0)"></span>
-              <span class="dot" onclick="currentSlide(1)"></span>
-              <span class="dot" onclick="currentSlide(2)"></span>
-              <span class="dot" onclick="currentSlide(3)"></span>
-              <span class="dot" onclick="currentSlide(4)"></span>
-            </div>
-
+        <div class="slider-dots" id="sliderDots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
           </div>
-        </section>
+        </div>
+      </section>
 
         <!-- 4. GOVERNANCE BANNER -->
         <section class="governance-banner">
@@ -185,67 +158,5 @@
   </div>
 
   <script src="script.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Mobile Nav Toggle
-      const navToggle = document.querySelector('.nav-toggle');
-      const navLinks = document.querySelector('.nav-links');
-
-      if (navToggle) {
-        navToggle.addEventListener('click', () => {
-          navLinks.classList.toggle('active');
-        });
-      }
-
-      // Slideshow Functionality
-      let slideIndex = 0;
-      const slides = document.querySelectorAll('.slide');
-      const dots = document.querySelectorAll('.dot');
-      const prevBtn = document.querySelector('.slideshow-arrow.prev');
-      const nextBtn = document.querySelector('.slideshow-arrow.next');
-
-      function showSlide(index) {
-        if (slides.length === 0) return;
-
-        // Wrap around limits
-        if (index >= slides.length) slideIndex = 0;
-        else if (index < 0) slideIndex = slides.length - 1;
-        else slideIndex = index;
-
-        // Hide all slides & deactivate dots
-        slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
-
-        // Display current slide & dot
-        slides[slideIndex].classList.add('active');
-        if (dots[slideIndex]) {
-          dots[slideIndex].classList.add('active');
-        }
-      }
-
-      // Attach Event Listeners to Buttons
-      if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-          showSlide(slideIndex - 1);
-        });
-      }
-
-      if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-          showSlide(slideIndex + 1);
-        });
-      }
-
-      // Attach Event Listeners to Dots
-      dots.forEach((dot, idx) => {
-        dot.addEventListener('click', () => {
-          showSlide(idx);
-        });
-      });
-
-      // Initialize First Slide
-      showSlide(0);
-    });
-  </script>
 </body>
 </html>

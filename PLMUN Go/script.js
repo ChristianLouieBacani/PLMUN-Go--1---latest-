@@ -212,3 +212,46 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.getElementById('singleSlider');
+  if (!container) return;
+
+  const slides = container.querySelectorAll('.single-slide');
+  const dots = container.querySelectorAll('.dot');
+  const totalRealDots = dots.length; // 5 dots
+  let currentIndex = 0;
+  let slideInterval;
+
+  function nextSlide() {
+    // Remove all classes first
+    slides.forEach((slide) => {
+      slide.classList.remove('active', 'prev');
+    });
+
+    // Mark current as previous (sliding out left)
+    const prevIndex = currentIndex;
+    currentIndex = (currentIndex + 1) % slides.length;
+
+    slides[prevIndex].classList.add('prev');
+    slides[currentIndex].classList.add('active');
+
+    // Update dots (using modulo so duplicate slide maps back to dot 0 cleanly)
+    const activeDotIndex = currentIndex % totalRealDots;
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === activeDotIndex);
+    });
+  }
+
+  // Auto-slide every 2 seconds (adjust here if you want it faster/slower)
+  function startSlider() {
+    slideInterval = setInterval(nextSlide, 2000);
+  }
+
+  // Pause on hover, resume on leave
+  container.addEventListener('mouseenter', () => clearInterval(slideInterval));
+  container.addEventListener('mouseleave', () => startSlider());
+
+  // Initialize
+  startSlider();
+});
